@@ -158,3 +158,33 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+### OpenFOAM test cases
+# Make builds
+**/Make/linux*
+
+# Run cases
+**/CASES/
+**/[1-9]*/
+**/dynamicCode/
+**/processor[0-9]*/
+**/postProcessing/
+**/postProcessing*/
+**/VTK/
+**/VTK*
+**/log*
+*tar.gz
+
+# Pflotran snapshot
+**/*.h5
+
+# OstrichModel run
+**/OstrichRun_*/
+**/OstOutput*.txt
+**/OstModel*.txt
+**/OstResiduals*.txt
+**/OstProgress*.txt
+**/OstStatus*.txt
+
+# Experimental data
+.hiddendata/

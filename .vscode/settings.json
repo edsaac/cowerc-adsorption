@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "0.000/*": "OpenFOAM",
+        "constant/*": "OpenFOAM",
+        "system/*": "OpenFOAM",
+        "**/0/*": "OpenFOAM",
+        "*Dict": "OpenFOAM",
+        "**/constant/*": "OpenFOAM",
+        "**/system/*": "OpenFOAM",
+        "*.C": "cpp",
+        "*.H": "cpp",
+        "ostream": "cpp"
+    }
+}
