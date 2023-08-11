@@ -36,7 +36,7 @@ executeControl  timeStep;
 // writeInterval	1;
 
 writeControl	runTime;
-writeInterval	1;
+writeInterval	5;
 
 
 // ************************************************************************* //

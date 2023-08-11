@@ -20,16 +20,16 @@ porosity        porosity    [0 0  0 0 0 0 0]    0.35;
 
 k_adsorption
 {
-    B B [0 0 -1 0 0 0 0]       1e-2;
-    C C [0 0 -1 0 0 0 0]       1e-3;
+    B   B [0 0 -1 0 0 0 0]       1e-2;
+    C   C [0 0 -1 0 0 0 0]       1e-3;
 }
 
 k_desorption
 {
-    B B [0 0 -1 0 0 0 0]       0;
-    C C [0 0 -1 0 0 0 0]       0;
+    B   B [0 0 -1 0 0 0 0]       0;
+    C   C [0 0 -1 0 0 0 0]       0;
 }
 
-retention_capacity  retention_capacity [1 -3 0 0 0 0 0] 1e-1;
+retention_capacity  retention_capacity [1 -3 0 0 0 0 0] 1e-3;
 
 // ************************************************************************* //
