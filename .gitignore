@@ -188,3 +188,4 @@ cython_debug/
 
 # Experimental data
 .hiddendata/
+_*/
