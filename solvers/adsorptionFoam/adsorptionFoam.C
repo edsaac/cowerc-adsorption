@@ -58,72 +58,72 @@ int main(int argc, char *argv[])
         {
             // * * * Previous calculations * * * * * * * * * * * * * * * * * //
 
-            site_blocking = (1.0 - (Bads + Cads)/retention_capacity);
+            site_blocking = (1.0 - (B_ads + C_ads)/retention_capacity);
 
             // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
             Info<< "waterPhase solver" << nl << endl;
 
-            fvScalarMatrix Eq_Baq
+            fvScalarMatrix Eq_B_aq
             (
-                fvm::ddt(porosity, Baq)
-                + fvm::div(phi, Baq)
-                - fvm::laplacian(DT, Baq)
+                fvm::ddt(porosity, B_aq)
+                + fvm::div(phi, B_aq)
+                - fvm::laplacian(DT, B_aq)
              ==
-                - k_adsorption_B * porosity * site_blocking * Baq
-                + k_desorption_B * Bads
-                + fvOptions(Baq)
+                - k_adsorption_B * porosity * site_blocking * B_aq
+                + k_desorption_B * B_ads
+                + fvOptions(B_aq)
             );
 
-            fvOptions.constrain(Eq_Baq);
-            Eq_Baq.solve();
-            fvOptions.correct(Baq);
+            fvOptions.constrain(Eq_B_aq);
+            Eq_B_aq.solve();
+            fvOptions.correct(B_aq);
 
-            fvScalarMatrix Eq_Caq
+            fvScalarMatrix Eq_C_aq
             (
-                fvm::ddt(porosity, Caq)
-                + fvm::div(phi, Caq)
-                - fvm::laplacian(DT, Caq)
+                fvm::ddt(porosity, C_aq)
+                + fvm::div(phi, C_aq)
+                - fvm::laplacian(DT, C_aq)
              ==
-                - k_adsorption_C * porosity * site_blocking * Caq
-                + k_desorption_C * Cads
-                + fvOptions(Caq)
+                - k_adsorption_C * porosity * site_blocking * C_aq
+                + k_desorption_C * C_ads
+                + fvOptions(C_aq)
             );
 
-            fvOptions.constrain(Eq_Caq);
-            Eq_Caq.solve();
-            fvOptions.correct(Caq);
+            fvOptions.constrain(Eq_C_aq);
+            Eq_C_aq.solve();
+            fvOptions.correct(C_aq);
             
 
             // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
             Info<< "solidPhase solver" << nl << endl;
 
-            fvScalarMatrix Eq_Bads
+            fvScalarMatrix Eq_B_ads
             (
-                fvm::ddt(Bads)
+                fvm::ddt(B_ads)
              ==
-                  k_adsorption_B * porosity * site_blocking * Baq
-                - k_desorption_B * Bads
-                + fvOptions(Bads)
+                  k_adsorption_B * porosity * site_blocking * B_aq
+                - k_desorption_B * B_ads
+                + fvOptions(B_ads)
             );
 
-            fvOptions.constrain(Eq_Bads);
-            Eq_Bads.solve();
-            fvOptions.correct(Bads);
+            fvOptions.constrain(Eq_B_ads);
+            Eq_B_ads.solve();
+            fvOptions.correct(B_ads);
 
-            fvScalarMatrix Eq_Cads
+            fvScalarMatrix Eq_C_ads
             (
-                fvm::ddt(Cads)
+                fvm::ddt(C_ads)
              ==
-                  k_adsorption_C * porosity * site_blocking * Caq
-                - k_desorption_C * Cads
-                + fvOptions(Cads)
+                  k_adsorption_C * porosity * site_blocking * C_aq
+                - k_desorption_C * C_ads
+                + fvOptions(C_ads)
             );
 
-            fvOptions.constrain(Eq_Cads);
-            Eq_Cads.solve();
-            fvOptions.correct(Cads);
+            fvOptions.constrain(Eq_C_ads);
+            Eq_C_ads.solve();
+            fvOptions.correct(C_ads);
         }
 
         runTime.write();

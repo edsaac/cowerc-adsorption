@@ -1,10 +1,10 @@
-Info<< "Reading scalarField `Baq`\n" << endl;
+Info<< "Reading scalarField `B_aq`\n" << endl;
 
-volScalarField Baq
+volScalarField B_aq
 (
     IOobject
     (
-        "Baq",
+        "B_aq",
         runTime.timeName(),
         mesh,
         IOobject::MUST_READ,
@@ -16,11 +16,11 @@ volScalarField Baq
 
 Info<< "Reading scalarField `Bads`\n" << endl;
 
-volScalarField Bads
+volScalarField B_ads
 (
     IOobject
     (
-        "Bads",
+        "B_ads",
         runTime.timeName(),
         mesh,
         IOobject::MUST_READ,
@@ -29,13 +29,13 @@ volScalarField Bads
     mesh
 );
 
-Info<< "Reading scalarField `Caq`\n" << endl;
+Info<< "Reading scalarField `C_aq`\n" << endl;
 
-volScalarField Caq
+volScalarField C_aq
 (
     IOobject
     (
-        "Caq",
+        "C_aq",
         runTime.timeName(),
         mesh,
         IOobject::MUST_READ,
@@ -47,11 +47,11 @@ volScalarField Caq
 
 Info<< "Reading scalarField `Cads`\n" << endl;
 
-volScalarField Cads
+volScalarField C_ads
 (
     IOobject
     (
-        "Cads",
+        "C_ads",
         runTime.timeName(),
         mesh,
         IOobject::MUST_READ,
