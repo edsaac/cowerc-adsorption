@@ -57,8 +57,11 @@ int main(int argc, char *argv[])
         while (simple.correctNonOrthogonal())
         {
             // * * * Previous calculations * * * * * * * * * * * * * * * * * //
-
-            site_blocking = (1.0 - (pfoa_ads + pfhxa_ads + pfhxs_ads + bez_ads + dcf_ads + pfba_ads + genx_ads + OM_ads)/retention_capacity);
+            if(retention_capacity.value() < 0){
+                site_blocking = 1;
+            } else {
+                site_blocking = max(0.0, (1.0 - (pfoa_ads + pfhxa_ads + pfhxs_ads + bez_ads + dcf_ads + pfba_ads + genx_ads + OM_ads)/retention_capacity));
+            }
 
             // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

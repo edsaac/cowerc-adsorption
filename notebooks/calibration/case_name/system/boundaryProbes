@@ -1,0 +1,31 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+fields          ( ".*aq" );
+
+points          ( ( 0 0 0 ) ( 0 0 0.0114 ) );
+
+maxDistance     0.001;
+
+#includeEtc "caseDicts/postProcessing/graphs/sampleDict.cfg"
+
+interpolationScheme cellPatchConstrained;
+
+setFormat       raw;
+
+patches         ( "bottom" "top" );
+
+#includeEtc "caseDicts/postProcessing/probes/boundaryProbes.cfg"
+
+executeControl  timeStep;
+
+writeControl    runTime;
+
+writeInterval   0.05;
+
+
+// ************************************************************************* //
