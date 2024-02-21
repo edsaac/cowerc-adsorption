@@ -191,3 +191,4 @@ cython_debug/
 .hiddendata/
 _*/
 .ignored/
+experimental_data
