@@ -12,35 +12,53 @@ def thomas_model(t, a, b):
 def log_thomas_model(t, a, b):
     return 1/(1 + np.exp(a - b*np.log(t)))
 
-data_folder = Path("./experimental_data")
-list_experiments = [f for f in data_folder.iterdir()]
 
-experiment = st.sidebar.selectbox("Select experiment", list_experiments, format_func= lambda x: x.name, index=None)
+data_folder = Path("./experimental_data")
+metadata_file = data_folder / "metadata.csv"
+metadata = read_csv(metadata_file)
+list_experiments = [f for f in data_folder.iterdir() if "EBCT" in f.name]
+
+with st.sidebar:
+    experiment = st.selectbox("Select experiment", list_experiments, format_func= lambda x: x.name, index=None)
 
 if experiment:
 
+    ## Select experiment
     df = read_csv(experiment)
-    with st.expander("🗃️ Data"):
-        st.dataframe(df, use_container_width=True, hide_index=True, height=200)
-    
     keys = df.keys()
+
+    with st.expander("🗃️ Data", expanded=True):
+        st.dataframe(df, use_container_width=True, hide_index=True, height=200,
+            column_config={k:st.column_config.NumberColumn(format="%.2e") for k in keys if "kg/m3" in k}
+        )
+        
+
     time_col = st.sidebar.selectbox("Time column", options=keys, index=2)
-    concenc_col = st.sidebar.selectbox("Concentration column", options=[k for k in keys if "C0" in k])
+    rel_concen_col = st.sidebar.selectbox("Concentration column", options=[k for k in keys if "C0" in k])
+    
+    concen_col = rel_concen_col.replace("C/C0", "kg/m3")
+    
+    ## Data to fit
+    dfma = df[0 < df[rel_concen_col]]
+    time = dfma[time_col]/60  ## seconds to minutes
+    rel_conc = dfma[rel_concen_col]
+    conc = dfma[concen_col]
+
+    tlin = np.linspace(time.min(), time.max(), 120)
 
     with st.sidebar:
         "****"
         "**Experiment known parameters**"
-        MASSADSB = st.number_input("Adsorbant mass $M$", value=1.0)
-        FLOWRATE = st.number_input("Flowrate $Q$", value=2.0)
-        INITCONC = st.number_input("Initial conc. $C_0$", value=1.0)
+        adsorbant_mass = float(metadata["M [g]"][metadata["Experiment"] == experiment.name].iloc[0])
+        MASSADSB = st.number_input("Adsorbant mass $M$ [g(s)]", value=adsorbant_mass, format="%.3f")
+        
+        flowrate = float(metadata["Q [mL/min]"][metadata["Experiment"] == experiment.name].iloc[0])
+        FLOWRATE = st.number_input("Flowrate $Q$ [cm³/min]", value=flowrate)
+        
+        initial_concentration = np.mean(conc/rel_conc)
+        INITCONC = st.number_input("Initial conc. $C_0$ [mg(c)/cm³]", value=initial_concentration, format="%.3e")
 
-
-    ## Data to fit
-    dfma = df[0 < df[concenc_col]]
-    time = dfma[time_col]
-    rel_conc = dfma[concenc_col]
-
-    tlin = np.linspace(0, df[time_col].max(), 120)
+    
     
     tabs = st.tabs(["Summary", "Thomas model", "log-Thomas model"])
     
@@ -74,6 +92,14 @@ if experiment:
                 k_T = \dfrac{b}{C_0} \qquad q_0 = \dfrac{a Q}{k_T M}
             $$
 
+            With units
+
+            $$
+                k_T = \left[ \dfrac{\mathrm{cm^3}}{\mathrm{mg_{(c)}} \; \mathrm{min}} \right]
+                \qquad
+                q_0 = \left[ \dfrac{\mathrm{mg_{(c)}}}{\mathrm{g_{(s)}}} \right]
+            $$
+
             *********
             """
 
@@ -90,21 +116,30 @@ if experiment:
             ax.set_ylabel(R"$\ln(C_0/C - 1)$")
             ax.ticklabel_format(axis='x', useMathText=True, scilimits=[0,0])
             ax.legend(prop={'size':8})
-            ax.set_xlabel(time_col)
+            ax.set_xlabel("Time $t$ [min]")
             
             st.pyplot(fig)
 
         with cols[1]:
-            f"""
-            Best-fit parameters:
-            - $a = ${a:.3E}
-            - $b = ${b:.3E}
             
-            Then:
-            - $k_T = ${b/INITCONC:.3e}
-            - $q_0 = $ {a*FLOWRATE/(MASSADSB * b/INITCONC):.3e}
+            fR"""
+            **Best-fit parameters:**
+            
+            |     | Value| Unit|
+            |:---:|--:|:--|
+            |$a$|{a:.2e}|-|
+            |$b$|{b:.2e}|-|
+            
+            &nbsp;
+            
+            **Then:**
+            
+            |     | Value| Unit|
+            |:---:|--:|:--|
+            |$k_T$|{b/INITCONC:.2e}|$\tfrac{{\rm cm^3}}{{\rm mg·min}}$|
+            |$q_0$|{a*FLOWRATE/(MASSADSB * b/INITCONC):.2e}|$\tfrac{{\rm mg}}{{\rm g}}$|
             """
-
+            
 
     with tabs[2]:
         with st.expander("Details:"):
@@ -151,30 +186,41 @@ if experiment:
             ax.set_xscale('log')
             ax.legend(prop={'size':8})
             ax.set_ylabel(R"$\ln(C_0/C - 1)$")
-            ax.set_xlabel(time_col)
+            ax.set_xlabel("Time $t$ [min]")
             st.pyplot(fig)
 
         with cols[1]:
-            f"""
-            Best-fit parameters:
-            - $a = ${a:.3E}
-            - $b = ${b:.3E}
+
+            fR"""
+            **Best-fit parameters:**
             
-            Then:
-            - $k_T = $ {b:.3e}
-            - $q_0 = $ {(INITCONC * FLOWRATE)/MASSADSB * np.exp(a/b):.3e}
+            |     | Value| Unit|
+            |:---:|--:|:--|
+            |$a$|{a:.2e}|-|
+            |$b$|{b:.2e}|-|
+            
+            &nbsp;
+            
+            **Then:**
+            
+            |     | Value| Unit|
+            |:---:|--:|:--|
+            |$k_T$|{b:.2e}|$\tfrac{{\rm cm^3}}{{\rm mg·min}}$|
+            |$q_0$|{(INITCONC * FLOWRATE)/MASSADSB * np.exp(a/b):.2e}|$\tfrac{{\rm mg}}{{\rm g}}$|
             """
 
     with tabs[0]:
         fig,ax = plt.subplots(figsize=[4,3])
         ax.scatter(time, rel_conc, label="Data", color='k')
-        ax.set_ylabel(concenc_col)
+        ax.set_ylabel(rel_concen_col)
         ax.plot(tlin, clin, label="Thomas model")
         ax.plot(tlin, clog, label="log-Thomas", c='r')
         ax.ticklabel_format(axis='x', useMathText=True, scilimits=[0,0])
         ax.legend(prop={'size':8})
-        ax.set_xlabel(time_col)
+        ax.set_xlabel("Time $t$ [min]")
+
         st.pyplot(fig)
 
-    # print(lr.slope, lr.intercept, lr.rvalue**2)
+with st.expander("Metadata"):
+    st.dataframe(metadata, hide_index=True, use_container_width=True)
 
