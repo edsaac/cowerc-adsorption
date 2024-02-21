@@ -25,7 +25,7 @@ if experiment:
     
     keys = df.keys()
     time_col = st.sidebar.selectbox("Time column", options=keys, index=2)
-    concenc_col = st.sidebar.selectbox("Concentration column", options=[k for k in keys if "C0" in k], index=6)
+    concenc_col = st.sidebar.selectbox("Concentration column", options=[k for k in keys if "C0" in k])
 
     with st.sidebar:
         "****"
