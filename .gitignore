@@ -188,6 +188,7 @@ cython_debug/
 **/OstStatus*.txt
 
 # Experimental data
+.data/
 .hiddendata/
 _*/
 .ignored/
