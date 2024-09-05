@@ -15,18 +15,18 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-DT              DT          [0 2 -1 0 0 0 0]    4e-08;
+DT              DT          [0 2 -1 0 0 0 0]    4e-09;
 porosity        porosity    [0 0  0 0 0 0 0]    0.35;
 
 k_adsorption
 {
     pfoa    pfoa  [0 0 -1 0 0 0 0]       4e-2;
-    pfhxa   pfhxa [0 0 -1 0 0 0 0]       3e-2;
-    pfhxs   pfhxs [0 0 -1 0 0 0 0]       5e-2;
-    bez     bez   [0 0 -1 0 0 0 0]       6e-3;
-    dcf     dcf   [0 0 -1 0 0 0 0]       5e-3;
-    pfba    pfba  [0 0 -1 0 0 0 0]       4e-4;
-    genx    genx  [0 0 -1 0 0 0 0]       5e-4;
+    pfhxa   pfhxa [0 0 -1 0 0 0 0]       3e-3;
+    pfhxs   pfhxs [0 0 -1 0 0 0 0]       5e-3;
+    bez     bez   [0 0 -1 0 0 0 0]       6e-4;
+    dcf     dcf   [0 0 -1 0 0 0 0]       5e-4;
+    pfba    pfba  [0 0 -1 0 0 0 0]       4e-5;
+    genx    genx  [0 0 -1 0 0 0 0]       5e-5;
 }
 
 k_desorption

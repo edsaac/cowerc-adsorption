@@ -15,8 +15,8 @@ fields (".*aq");
 
 points
 (
-(0 0 0.0)
-(0 0 1.0)
+  (0 0 0.0)
+  (0 0 1.0)
 );
 
 maxDistance 0.01;
@@ -24,10 +24,10 @@ maxDistance 0.01;
 // Sampling and I/O settings
 #includeEtc "caseDicts/postProcessing/graphs/sampleDict.cfg"
 
-interpolationScheme cell;
-setFormat raw;
+interpolationScheme cellPatchConstrained;
+setFormat csv;
 
-patches     (".*");
+patches     ("top" "bottom");
 
 #includeEtc "caseDicts/postProcessing/probes/boundaryProbes.cfg"
 
@@ -35,7 +35,7 @@ executeControl  timeStep;
 // writeControl	timeStep;
 // writeInterval	1;
 
-writeControl	runTime;
+writeControl	runTime; 
 writeInterval	5;
 
 
