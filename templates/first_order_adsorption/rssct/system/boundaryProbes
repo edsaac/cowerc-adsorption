@@ -1,0 +1,41 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+Description
+    Writes out values of fields at a specified list of points, interpolated to
+    specified boundary patches.
+
+\*---------------------------------------------------------------------------*/
+
+fields (".*aq");
+
+// Probes at the top and bottom of the column
+points
+(
+  (0 0 0.0)
+  (0 0 0.0113)
+);
+
+maxDistance 0.001;
+
+// Sampling and I/O settings
+#includeEtc "caseDicts/postProcessing/graphs/sampleDict.cfg"
+
+interpolationScheme cellPatchConstrained;
+setFormat csv;
+
+patches     ("top" "bottom");
+
+#includeEtc "caseDicts/postProcessing/probes/boundaryProbes.cfg"
+
+// Write every 10 minutes (10min * 60s = 600s)
+executeControl  timeStep;
+writeControl	runTime; 
+writeInterval	600;
+
+
+// ************************************************************************* //

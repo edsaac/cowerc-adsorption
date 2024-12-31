@@ -1,0 +1,74 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+application     pfasFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+/*
+The 3-min experiment is run for ~45h
+    - endTime = 45h * 60min * 60s = 162000s <--
+*/
+stopAt          endTime;
+
+endTime         162000;
+
+/*
+The time step is calculated so the CFL condition
+is lower than 1.0. 
+
+    - Darcy flux (q) = 6.27E-3 m/s
+    - Porosity (epsilon) = 0.4
+    - Pore velocity (u) = 1.57E-2 m/s
+
+    - deltaT < deltaX / max(u)
+    - deltaT < 1.13E-3m / 1.57-2m/s = 0.072s <--
+*/
+deltaT          0.07;
+
+/*
+Write results every 1 hour (1h * 60min * 60s = 3600s)
+*/
+writeControl    runTime;
+
+writeInterval   3600;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      fixed;
+
+timePrecision   2;
+
+runTimeModifiable false;
+
+
+functions
+{
+
+  #includeFunc boundaryProbes
+
+};
+
+
+// ************************************************************************* //

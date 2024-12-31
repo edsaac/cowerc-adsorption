@@ -1,0 +1,49 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      darcyFlux;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+/* 
+For the 10-min experiment
+    - Q = 1.90 mL/min = 3.17E-8 m³/s
+    - d = 4.6 mm = 0.0046 m
+    - A = pi * d²/4 = 1.66E-5 m²
+    - q = Q / A = 3.17E-8 m³/s / 1.66E-5 m² = 1.907E-3 m/s
+
+For the 3-min experiment
+    - Q = 6.25 mL/min = 1.04E-7 m³/s
+    - q = Q / A = 1.04E-7 m³/s / 1.66E-5 m² = 6.27E-3 m/s
+
+Notice this is Darcy flux, not pore velocity. The solver will
+automatically convert it to pore velocity using the designated porosity.
+*/
+
+internalField   uniform (0 0 -6.27E-3);
+
+boundaryField
+{
+    "(front|back|right|left)"
+    {
+        type    empty;
+    }
+
+    "(top|bottom)"
+    {
+        type            zeroGradient;
+    }
+}
+
+// ************************************************************************* //
