@@ -1,7 +1,8 @@
 from functools import partial
 from dataclasses import dataclass, asdict
 from collections.abc import Iterable, Mapping
-from typing import Optional
+from typing import Optional, Callable
+from copy import deepcopy
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -57,19 +58,6 @@ def J_function(x: float, y: float | np.ndarray) -> float | np.ndarray:
     return 1 - integral_value
 
 
-"""
-A model is a function compatible with the scipy.optimize.curve_fit function.
-
-model(time, **ModelParameters, **ExperimentalSetup)
-
-where **ExperimentalSetup are constant parameters that are not fitted, and
-**ModelParameters are the parameters that may or not be fitted.
-
-Parameters in ModelParameters are fitted if they are None.
-
-"""
-
-
 class DataclassMapping(Mapping):
     @property
     def _asdict(self):
@@ -93,6 +81,9 @@ class DataclassMapping(Mapping):
     def keys(self):
         return self._asdict.keys()
 
+    def copy(self):
+        return deepcopy(self)
+
 
 @dataclass
 class ThomasModelParameters(DataclassMapping):
@@ -107,6 +98,10 @@ class ThomasModelParameters(DataclassMapping):
     @property
     def fixed_parameters(self):
         return {k: v for k, v in self.items() if v is not None}
+
+    @property
+    def fittable_parameters(self):
+        return {k: v for k, v in self.items() if v is None}
 
 
 @dataclass
@@ -124,42 +119,47 @@ class BreaktroughData(DataclassMapping):
     conc: np.ndarray
 
 
-class ThomasModel:
-    def __init__(self, name: str):
-        self.name = name
+def ThomasModel(
+    t: np.ndarray,  # <- Independent variable
+    k_T: float,  # Parameter
+    q_m: float,  # Parameter
+    b: float,  # Parameter
+    C_0: float,  # Initial concentration
+    length: float,  # Length of the column
+    pore_velocity: float,  # Fluid velocity
+    rho_p: float,  # Particle density
+    epsilon: float,  # Porosity
+):
+    """
+    A model is a function compatible with the scipy.optimize.curve_fit function.
 
-    @classmethod
-    def model(
-        t: np.ndarray,  # <- Independent variable
-        k_T: float,  # Parameter
-        q_m: float,  # Parameter
-        b: float,  # Parameter
-        C_0: float,  # Initial concentration
-        length: float,  # Length of the column
-        pore_velocity: float,  # Fluid velocity
-        rho_p: float,  # Particle density
-        epsilon: float,  # Porosity
-    ):
-        Z = length
-        v = pore_velocity
+    model(time, **ModelParameters, **ExperimentalSetup)
 
-        r = 1 + (b * C_0)
-        n = rho_p * q_m * k_T * Z * (1 - epsilon) / (v * epsilon)
-        T = epsilon * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - epsilon))
+    where **ExperimentalSetup are constant parameters that are not fitted, and
+    **ModelParameters are the parameters that may or not be fitted.
 
-        J1 = J_function(n / r, n * T)
-        J2 = J_function(n, n * T / r)
+    Parameters in ModelParameters are fitted if they are None.
+    """
+    Z = length
+    v = pore_velocity
 
-        return J1 / (J1 + (1 - J2) * np.exp((1 - 1 / r) * (n - n * T)))
+    r = 1 + (b * C_0)
+    n = rho_p * q_m * k_T * Z * (1 - epsilon) / (v * epsilon)
+    T = epsilon * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - epsilon))
+
+    J1 = J_function(n / r, n * T)
+    J2 = J_function(n, n * T / r)
+
+    return J1 / (J1 + (1 - J2) * np.exp((1 - 1 / r) * (n - n * T)))
 
 
 @dataclass
 class Experiment:
     name: str
     contaminant: str
-    model: ThomasModel
     setup: ThomasExperimentalSetup
     parameters: ThomasModelParameters
+    model: Callable = ThomasModel
     btc: Optional[BreaktroughData] = None
 
     def plot_btc(self):
@@ -229,7 +229,7 @@ class Experiment:
 
     def fit(
         self,
-        initial_guess: list[float] | None = None,
+        initial_guess: ThomasModelParameters | None = None,
         bounds: Bounds | None = None,
         loss: str = "soft_l1",
     ):
@@ -239,31 +239,31 @@ class Experiment:
         if not bounds:
             raise ValueError("Bounds not provided")
 
-        if not self.parameters.are_fitted:
-            raise ValueError("At least one parameter is None")
+        if self.parameters.are_fitted:
+            return
 
         cfit = curve_fit(
             self.callable,
             self.btc.time,
             self.btc.conc / self.setup.C_0,
-            p0=initial_guess,
+            p0=list(initial_guess.fixed_parameters.values()),
             bounds=bounds,
             method="trf",
             full_output=True,
             loss=loss,
         )
 
-        optimal = {k: v for k, v in zip(initial_guess, cfit[0])}
-        self.parameters.update(optimal)
+        for k, v in zip(initial_guess, cfit[0]):
+            setattr(self.parameters, k, v)
 
     def report_fit(self):
         report = "Best-fit parameters:"
 
         for k, v in self.parameters.items():
-            report += f"\n- ${LATEX_LUT[k]}$ = {v:.2e} {UNITS_LUT[k]}"
+            report += f"\n- ${LATEX_LUT[k]}$ = {v:.e} {UNITS_LUT[k]}"
 
         t = self.btc.time
-        y_obs = self.btc.time / self.setup.C_0
+        y_obs = self.btc.conc / self.setup.C_0
         y_fit = self.callable(t, **self.parameters)
         res_sum = np.sum((y_obs - y_fit) ** 2)
         variance = np.sum((y_obs - np.mean(y_obs)) ** 2)

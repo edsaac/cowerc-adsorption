@@ -5,17 +5,28 @@ import streamlit as st
 import pandas as pd
 from scipy.optimize import Bounds
 
-from thomas_model_plots import (
+from adsorption_model import (
+    ThomasModelParameters,
+    ThomasExperimentalSetup,
+    Experiment,
+    BreaktroughData,
+)
+
+from plotting import (
     make_single_plot,
     variate_some_parameter,
 )
-from thomas_model_equations import (
-    Experiment,
-    ExperimentalSetup,
-    BreaktroughData,
-    ThomasModelInputs,
-    TargetParameters,
-)
+
+## Constants
+C_0 = 2.07  # µg/L
+length = 1.13  # cm
+rho_p = 1100  # g/L
+epsilon = 0.4  # -
+flow_rate = 1.90  # cm³/min
+flow_rate *= 60  # cm³/h
+column_diameter = 0.46  # cm
+cross_area = 0.25 * np.pi * (column_diameter**2)  # cm²
+pore_velocity = flow_rate / (epsilon * cross_area)  # cm/h
 
 
 def introduction():
@@ -133,18 +144,6 @@ def introduction():
 
     st.header("Playing with parameters", divider="rainbow")
 
-    ## Constants
-    C_0 = 2.07  # µg/L
-    length = 1.13  # cm
-    rho_p = 1100  # g/L
-    epsilon = 0.4  # -
-    flow_rate = 1.90  # cm³/min
-    flow_rate *= 60  # cm³/h
-
-    column_diameter = 0.46  # cm
-    cross_area = 0.25 * np.pi * (column_diameter**2)  # cm²
-    pore_velocity = flow_rate / (epsilon * cross_area)  # cm/h
-
     rf"""
     Consider a column experiment with:
     $$
@@ -157,6 +156,14 @@ def introduction():
     \end{{align*}}
     $$
     """
+
+    setup = ThomasExperimentalSetup(
+        C_0=C_0,
+        length=length,
+        pore_velocity=pore_velocity,
+        rho_p=rho_p,
+        epsilon=epsilon,
+    )
 
     cols = st.columns([1, 2])
 
@@ -186,19 +193,10 @@ def introduction():
             format_func=lambda x: f"{x:.1e}",
         )
 
-        model_params = ThomasModelInputs(
-            k_T=k_T,
-            q_m=qm,
-            b=b,
-            C_0=C_0,
-            length=length,
-            pore_velocity=pore_velocity,
-            rho_p=rho_p,
-            epsilon=epsilon,
-        )
+        params = ThomasModelParameters(k_T=k_T, q_m=qm, b=b)
 
     with cols[1]:
-        st.pyplot(make_single_plot(model_params))
+        st.pyplot(make_single_plot(setup, params))
 
     st.subheader("Summary")
 
@@ -206,26 +204,19 @@ def introduction():
 
     with tab1:
         k_T_array = [5e-2, 1e-1, 5e-1, 1e-0]  # L/µg.h
-        st.pyplot(variate_some_parameter(model_params, "k_T", k_T_array))
+        st.pyplot(variate_some_parameter(setup, params, ("k_T", k_T_array)))
 
     with tab2:
         qm_array = [25, 40, 55]  # µg/g
-        st.pyplot(variate_some_parameter(model_params, "q_m", qm_array))
+        st.pyplot(variate_some_parameter(setup, params, ("q_m", qm_array)))
 
     with tab3:
         b_array = [1e-1, 1e-0, 1e1, 1e2]  # L/µg
-        st.pyplot(variate_some_parameter(model_params, "b", b_array))
+        st.pyplot(variate_some_parameter(setup, params, ("b", b_array)))
 
 
 def fitting_experiment():
     st.header("Fitting real data", divider="rainbow")
-
-    ## Constants
-    length = 1.13  # cm
-    rho_p = 1100  # g/L
-    epsilon = 0.4  # -
-    column_diameter = 0.46  # cm
-    cross_area = 0.25 * np.pi * (column_diameter**2)  # cm²
 
     rf"""
     Consider two column experiments with:
@@ -244,7 +235,7 @@ def fitting_experiment():
     |3 minute|6.25|{(v_3min :=6.25 * 60 / (epsilon * cross_area)):.2f}|
     |10 minute|1.90|{(v_10min := 1.90 * 60 / (epsilon * cross_area)):.2f}|
 
-    We will try to fit the three model parameters, $k_T$, $q_m$ and $b$, to the experimental 
+    We will try to fit the three model parameters, $k_T$, $q_m$ and $b$, to the experimental
     data.
 
     """
@@ -253,61 +244,65 @@ def fitting_experiment():
         Experiment(
             name="3 minute",
             contaminant="PFOA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=1.425,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_3min,  # cm/h
                 rho_p=rho_p,  # g/L
                 epsilon=epsilon,  # -
             ),
+            parameters=ThomasModelParameters(),
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFOA"].to_numpy() / 1000,  # µg/L
-                C_0=1.425,  # µg/L
             ),
         ),
         Experiment(
             name="3 minute",
             contaminant="PFBA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=1.032,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_3min,  # cm/h
                 rho_p=rho_p,  # g/L
                 epsilon=epsilon,  # -
             ),
+            parameters=ThomasModelParameters(),
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFBA"].to_numpy() / 1000,  # µg/L
-                C_0=1.032,  # µg/L
             ),
         ),
         Experiment(
             name="10 minute",
             contaminant="PFOA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=2.097,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_10min,  # cm/h
                 rho_p=rho_p,  # g/L
                 epsilon=epsilon,  # -
             ),
+            parameters=ThomasModelParameters(),
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFOA"].to_numpy() / 1000,  # µg/L
-                C_0=2.097,  # µg/L
             ),
         ),
         Experiment(
             name="10 minute",
             contaminant="PFBA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=0.976,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_10min,  # cm/h
                 rho_p=rho_p,  # g/L
                 epsilon=epsilon,  # -
             ),
+            parameters=ThomasModelParameters(),
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFBA"].to_numpy() / 1000,  # µg/L
-                C_0=0.976,  # µg/L
             ),
         ),
     ]
@@ -315,7 +310,7 @@ def fitting_experiment():
     tabs = st.tabs([f"""{exp.name} - {exp.contaminant}""" for exp in experiments])
 
     config = dict(
-        initial_guess=TargetParameters(k_T=1e-2, q_m=40, b=1),
+        initial_guess=ThomasModelParameters(k_T=1e-2, q_m=40, b=1),
         bounds=Bounds(lb=[10e-5, 0.1, 1e-4], ub=[1e1, 200_000, 1e3]),
     )
 
@@ -332,20 +327,6 @@ def fitting_experiment():
 
 def fitting_while_fixing():
     st.header("Fitting with fixed parameters", divider="rainbow")
-
-    ## Constants
-    length = 1.13  # cm
-    rho_p = 1100  # g/L
-    epsilon = 0.4  # -
-    column_diameter = 0.46  # cm
-    cross_area = 0.25 * np.pi * (column_diameter**2)  # cm²
-
-    ## Constants
-    length = 1.13  # cm
-    rho_p = 1100  # g/L
-    epsilon = 0.4  # -
-    column_diameter = 0.46  # cm
-    cross_area = 0.25 * np.pi * (column_diameter**2)  # cm²
 
     rf"""
     Consider two column experiments with:
@@ -365,21 +346,23 @@ def fitting_while_fixing():
     |10 minute|1.90|{(v_10min := 1.90 * 60 / (epsilon * cross_area)):.2f}|
 
     From batch experiments, we obtained values for equilibrium isotherms
-    
+
     |Parameter|PFOA|PFBA|
     |:---:|---:|---:|
-    |$q_m$ (µg/g)| $1.156$ | $0.461$ | 
+    |$q_m$ (µg/g)| $1.156$ | $0.461$ |
     |$b$ (L/µg)| $261.3$ | $97.27$ |
-    
-    We will try to fit two parameters $k_T$, $q_m$, and fix $b$ to the value obtained from 
-    the batch experiments.
+
+    The values for $q_m$ are pretty distant from the values obtained from the batch 
+    experiments, so we will try to fit the parameters $k_T$ and $q_m$ to the experimental 
+    data, while fixing $b$ to the value obtained from the batch experiments.
     """
 
     experiments = [
         Experiment(
             name="3 minute + batch",
             contaminant="PFOA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=1.425,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_3min,  # cm/h
                 rho_p=rho_p,  # g/L
@@ -388,14 +371,15 @@ def fitting_while_fixing():
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFOA"].to_numpy() / 1000,  # µg/L
-                C_0=1.425,  # µg/L
             ),
-            parameters=TargetParameters(b=261.3),
+            parameters=ThomasModelParameters(b=261.3),
+            # parameters=ThomasModelParameters(q_m=1.156, b=261.3),
         ),
         Experiment(
             name="3 minute + batch",
             contaminant="PFBA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=1.032,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_3min,  # cm/h
                 rho_p=rho_p,  # g/L
@@ -404,14 +388,15 @@ def fitting_while_fixing():
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFBA"].to_numpy() / 1000,  # µg/L
-                C_0=1.032,  # µg/L
             ),
-            parameters=TargetParameters(b=97.27),
+            parameters=ThomasModelParameters(b=97.27),
+            # parameters=ThomasModelParameters(q_m=0.461, b=97.27),
         ),
         Experiment(
             name="10 minute + batch",
             contaminant="PFOA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=2.097,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_10min,  # cm/h
                 rho_p=rho_p,  # g/L
@@ -420,14 +405,15 @@ def fitting_while_fixing():
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFOA"].to_numpy() / 1000,  # µg/L
-                C_0=2.097,  # µg/L
             ),
-            parameters=TargetParameters(b=261.3),
+            parameters=ThomasModelParameters(b=261.3),
+            # parameters=ThomasModelParameters(q_m=1.156, b=261.3),
         ),
         Experiment(
             name="10 minute + batch",
             contaminant="PFBA",
-            setup=ExperimentalSetup(
+            setup=ThomasExperimentalSetup(
+                C_0=0.976,  # µg/L
                 length=length,  # cm
                 pore_velocity=v_10min,  # cm/h
                 rho_p=rho_p,  # g/L
@@ -436,19 +422,24 @@ def fitting_while_fixing():
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFBA"].to_numpy() / 1000,  # µg/L
-                C_0=0.976,  # µg/L
             ),
-            parameters=TargetParameters(b=97.27),
+            parameters=ThomasModelParameters(b=97.27),
+            # parameters=ThomasModelParameters(q_m=0.461, b=97.27),
         ),
     ]
 
     config = dict(
-        initial_guess=TargetParameters(k_T=1e-2, q_m=40),
+        initial_guess=ThomasModelParameters(k_T=1e-2, q_m=40),
         bounds=Bounds(lb=[10e-5, 0.1], ub=[1e1, 200_000]),
     )
 
-    tabs = st.tabs([f"""{exp.name} - {exp.contaminant}""" for exp in experiments])
+    # config = dict(
+    #     initial_guess=ThomasModelParameters(k_T=1e-2),
+    #     bounds=Bounds(lb=[10e-5], ub=[1e1]),
+    # )
 
+    tabs = st.tabs([f"""{exp.name} - {exp.contaminant}""" for exp in experiments])
+    # breakpoint()
     for tab, exp in zip(tabs, experiments):
         with tab:
             exp.fit(**config)
