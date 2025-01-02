@@ -193,3 +193,6 @@ cython_debug/
 _*/
 .ignored/
 experimental_data
+
+# VSCode
+.vscode/
