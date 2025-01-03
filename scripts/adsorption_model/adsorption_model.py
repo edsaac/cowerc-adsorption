@@ -26,7 +26,7 @@ UNITS_LUT = dict(
     Z="cm",
     v="cm/h",
     rho_p="g/L",
-    epsilon="-",
+    porosity="-",
 )
 
 LATEX_LUT = dict(
@@ -37,7 +37,7 @@ LATEX_LUT = dict(
     Z=r"$Z$",
     v=r"$v$",
     rho_p=r"$\rho_p$",
-    epsilon=r"$\epsilon$",
+    porosity=r"$n$",
 )
 
 
@@ -110,7 +110,7 @@ class ThomasExperimentalSetup(DataclassMapping):
     length: float
     pore_velocity: float
     rho_p: float
-    epsilon: float
+    porosity: float
 
 
 @dataclass
@@ -128,7 +128,7 @@ def ThomasModel(
     length: float,  # Length of the column
     pore_velocity: float,  # Fluid velocity
     rho_p: float,  # Particle density
-    epsilon: float,  # Porosity
+    porosity: float,  # Porosity
 ):
     """
     A model is a function compatible with the scipy.optimize.curve_fit function.
@@ -144,8 +144,13 @@ def ThomasModel(
     v = pore_velocity
 
     r = 1 + (b * C_0)
-    n = rho_p * q_m * k_T * Z * (1 - epsilon) / (v * epsilon)
-    T = epsilon * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - epsilon))
+    n = rho_p * q_m * k_T * Z * (1 - porosity) / (v * porosity)
+    T = (
+        porosity
+        * (1 / b + C_0)
+        * (v * t / Z - 1)
+        / (rho_p * q_m * (1 - porosity))
+    )
 
     J1 = J_function(n / r, n * T)
     J2 = J_function(n, n * T / r)
@@ -187,11 +192,16 @@ class Experiment:
 
         return fig
 
-    def plot_relative_btc(self, with_fit: bool = False):
+    def plot_relative_btc(self, with_fit: bool = False, ax=None):
         if self.btc is None:
             raise ValueError("No breakthrough data provided")
 
-        fig, ax = plt.subplots(figsize=(3, 3))
+        if ax is None:
+            fig, ax = plt.subplots(figsize=(3, 3))
+            _return_fig = True
+        else:
+            _return_fig = False
+
         ax.axhline(y=1.0, color="gray", ls=(0, (1, 1)), lw=1)
 
         ax.scatter(
@@ -210,14 +220,14 @@ class Experiment:
             c = self.callable(t, **self.parameters)
             ax.plot(t, c, label="Fit", path_effects=line_shade)
 
-        ax.legend()
-        ax.spines["right"].set_visible(False)
-        ax.spines["top"].set_visible(False)
-        ax.set_title(f"{self.name} - {self.contaminant}")
-        ax.set_xlabel("Time [h]")
-        ax.set_ylabel("Rel. Conc. $C/C_0$ [-]")
-
-        return fig
+        if _return_fig:
+            ax.spines["right"].set_visible(False)
+            ax.spines["top"].set_visible(False)
+            ax.set_title(f"{self.name} - {self.contaminant}")
+            ax.legend()
+            ax.set_xlabel("Time [h]")
+            ax.set_ylabel("Rel. Conc. $C/C_0$ [-]")
+            return fig
 
     @property
     def callable(self):
@@ -260,7 +270,7 @@ class Experiment:
         report = "Best-fit parameters:"
 
         for k, v in self.parameters.items():
-            report += f"\n- ${LATEX_LUT[k]}$ = {v:.e} {UNITS_LUT[k]}"
+            report += f"\n- ${LATEX_LUT[k]}$ = {v:.2e} {UNITS_LUT[k]}"
 
         t = self.btc.time
         y_obs = self.btc.conc / self.setup.C_0
