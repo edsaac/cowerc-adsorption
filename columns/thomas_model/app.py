@@ -478,7 +478,7 @@ def fitting_while_fixing():
     tabs = st.tabs(
         [f"""{exp.name} - {exp.contaminant}""" for exp in experiments]
     )
-    # breakpoint()
+
     for tab, exp in zip(tabs, experiments):
         with tab:
             exp.fit(**config)
