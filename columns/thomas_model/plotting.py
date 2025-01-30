@@ -149,7 +149,9 @@ LATEX_LUT = dict(
 #     return fig
 
 
-def make_single_plot(setup: ThomasExperimentalSetup, parameters: ThomasModelParameters):
+def make_single_plot(
+    setup: ThomasExperimentalSetup, parameters: ThomasModelParameters
+):
     t = np.arange(0.1, 40.5, 0.1)  # h
     conc = ThomasModel(t, **setup, **parameters)
 
@@ -190,7 +192,9 @@ def variate_some_parameter(
 
     unit = UNITS_LUT[pname]
     symbol = LATEX_LUT[pname]
-    ax.legend(title=f"{symbol} [{unit}]", loc="center left", bbox_to_anchor=(1, 0.5))
+    ax.legend(
+        title=f"{symbol} [{unit}]", loc="center left", bbox_to_anchor=(1, 0.5)
+    )
 
     ax.spines["right"].set_visible(False)
     ax.spines["top"].set_visible(False)

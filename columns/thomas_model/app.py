@@ -263,7 +263,7 @@ def fitting_experiment():
 
     |Experiment|Flow rate [mL/min]|Pore velocity [cm/h]|
     |:---:|:--:|:--:|
-    |3 minute|6.25|{(v_3min :=6.25 * 60 / (porosity * cross_area)):.2f}|
+    |3 minute|6.25|{(v_3min := 6.25 * 60 / (porosity * cross_area)):.2f}|
     |10 minute|1.90|{(v_10min := 1.90 * 60 / (porosity * cross_area)):.2f}|
 
     We will try to fit the three model parameters, $k_T$, $q_m$ and $b$, 
@@ -343,8 +343,9 @@ def fitting_experiment():
     )
 
     config = dict(
-        initial_guess=ThomasModelParameters(k_T=1e-2, q_m=40, b=1),
-        bounds=Bounds(lb=[10e-5, 0.1, 1e-4], ub=[1e1, 200_000, 1e3]),
+        initial_guess=ThomasModelParameters(k_T=1e-4, q_m=40, b=1),
+        bounds=Bounds(lb=[1e-5, 0.1, 1e-4], ub=[1e1, 500_000, 1e3]),
+        ftol=1e-5,
     )
 
     for tab, exp in zip(tabs, experiments):
@@ -378,7 +379,7 @@ def fitting_while_fixing():
 
     |Experiment|Flow rate [mL/min]|Pore velocity [cm/h]|
     |:---:|:--:|:--:|
-    |3 minute|6.25|{(v_3min :=6.25 * 60 / (porosity * cross_area)):.2f}|
+    |3 minute|6.25|{(v_3min := 6.25 * 60 / (porosity * cross_area)):.2f}|
     |10 minute|1.90|{(v_10min := 1.90 * 60 / (porosity * cross_area)):.2f}|
 
     From batch experiments, we obtained values for equilibrium isotherms
@@ -608,7 +609,7 @@ def rewrite_equations():
 
     $$
     \begin{align*}
-        s_m &= \rho_p \left(1 - n\right) q_m \\
+        S_m &= \rho_p \left(1 - n\right) q_m \\
         n \, k_{\textsf{ads}} &= k_T \rho_p \left(1 - n\right) q_m \\
         k_{\textsf{des}} &= \dfrac{k_T}{b} \\
     \end{align*}
@@ -651,9 +652,9 @@ def rewrite_equations():
     
     $$
     \begin{align*}
-        k_T =& 1.00\times 10^{-4} \, \textrm{L/µg.h} \\
-        q_m =& 7.57 \times 10^{4} \, \textrm{µg/g} \\
-        b =& 8.69 \times 10^{-4} \, \textrm{L/µg} \\
+        k_T =& 7.91\times 10^{-5} \, \textrm{L/µg.h} \\
+        q_m =& 9.58 \times 10^{4} \, \textrm{µg/g} \\
+        b =& 6.87 \times 10^{-4} \, \textrm{L/µg} \\
     \end{align*}
     $$
 
@@ -662,17 +663,17 @@ def rewrite_equations():
 
     $$
     \begin{align*}
-        S_m =& 7.57 \times 10^{4} \; \textrm{kg/m³} \\
-        k_{\textsf{ads}} =& 3.47 \; \text{1/s} \\
+        S_m =& 57.48 \; \textrm{kg/m³} \\
+        k_{\textsf{ads}} =& 3.16 \; \text{1/s} \\
         k_{\textsf{des}} =& 3.2 \times 10^{-5} \; \text{1/s} \\
     \end{align*}
     $$
 
-    But are those values sensible?
+    But do those values make sense?
     
     """
 
-    of_case = Case_Directory("../../notebooks/_column_case")
+    of_case = Case_Directory("../../notebooks/_3minute_PFOA")
     prb = Boundary_Probe(of_case, of_case.system.boundaryProbes)
     data = prb.array_data
 
@@ -690,7 +691,7 @@ def rewrite_equations():
             rho_p=rho_p,  # g/L
             porosity=porosity,  # -
         ),
-        parameters=ThomasModelParameters(k_T=1e-4, q_m=7.57e4, b=8.69e-4),
+        parameters=ThomasModelParameters(k_T=7.91e-5, q_m=9.58e4, b=6.87e-4),
         btc=BreaktroughData(
             time=data_3min["Time (s)"].to_numpy() / 3600,  # h
             conc=data_3min["PFOA"].to_numpy() / 1000,  # µg/L
@@ -699,27 +700,27 @@ def rewrite_equations():
 
     fig, axs = plt.subplots(
         1,
-        3,
+        2,
         figsize=(8, 3),
         sharey=True,
-        gridspec_kw={"wspace": 0.05, "width_ratios": [0.5, 1, 1]},
+        gridspec_kw={"wspace": 0.05, "width_ratios": [1, 1]},
     )
 
     ax = axs[0]
-    ax.plot(data.time, rel_conc, label="PFOA", c="k")
+    # ax.plot(data.time, rel_conc, label="PFOA", c="k")
     ax.set_ylabel("Relative concentration")
-    ax.set_xlabel("Time (s)")
-    ax.set_xlim(left=0, right=3)
-    ax.axvline(0.7197, label="1 Pore-volume", ls="dotted", lw=1, c="grey")
+    # ax.set_xlabel("Time (s)")
+    # ax.set_xlim(left=0, right=3)
+    # ax.axvline(0.7197, label="1 Pore-volume", ls="dotted", lw=1, c="grey")
 
-    ax = axs[1]
+    # ax = axs[0]
     ax.plot(t_hours, rel_conc, label="PFOA", c="k")
     ax.set_title("OpenFOAM model\nNumerical solution")
     ax.set_xlabel("Time (h)")
-    ax.legend()
+    ax.legend(loc="lower right")
     # ax.set_xlim(left=-0.0025, right=0.0025)
 
-    ax = axs[2]
+    ax = axs[1]
     exp.plot_relative_btc(with_fit=True, ax=ax)
     ax.set_title("Thomas model\nAnalytical solution")
     ax.legend()

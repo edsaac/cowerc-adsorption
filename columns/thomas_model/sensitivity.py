@@ -56,7 +56,7 @@ problem = {
 }
 
 # Generate samples
-param_values = sample(problem, 516)
+param_values = sample(problem, 512)
 
 # Run model (example)
 with Pool() as pool:
