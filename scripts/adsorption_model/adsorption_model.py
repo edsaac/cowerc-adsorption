@@ -14,8 +14,6 @@ from scipy.special import i0
 from scipy.integrate import quad
 from scipy.optimize import curve_fit, Bounds
 
-from sko.PSO import PSO
-
 line_shade = [
     Stroke(linewidth=4, foreground="grey"),
     Normal(),
