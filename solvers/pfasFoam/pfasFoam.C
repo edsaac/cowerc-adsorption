@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
         while (simple.correctNonOrthogonal())
         {
             // * * * Previous calculations * * * * * * * * * * * * * * * * * //
-
-            site_blocking = (1.0 - (pfoa_ads + pfhxa_ads + pfhxs_ads + bez_ads + dcf_ads + pfba_ads + genx_ads) / retention_capacity);
+            ads_saturation = (pfoa_ads + pfhxa_ads + pfhxs_ads + bez_ads + dcf_ads + pfba_ads + pfos_ads) / retention_capacity;
+            site_blocking = 1.0 - ads_saturation;
 
             // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -149,19 +149,19 @@ int main(int argc, char *argv[])
             Eq_pfba_aq.solve();
             fvOptions.correct(pfba_aq);
 
-            // Aqueous phase of GENX
-            fvScalarMatrix Eq_genx_aq(
-                fvm::ddt(porosity, genx_aq)       // d(n.C)/dt
-                    + fvm::div(phi, genx_aq)      // q. dC/dx --Adv
-                    - fvm::laplacian(DT, genx_aq) // d²C/dx²  --Diff
+            // Aqueous phase of pfos
+            fvScalarMatrix Eq_pfos_aq(
+                fvm::ddt(porosity, pfos_aq)       // d(n.C)/dt
+                    + fvm::div(phi, pfos_aq)      // q. dC/dx --Adv
+                    - fvm::laplacian(DT, pfos_aq) // d²C/dx²  --Diff
                 ==
-                -k_adsorption_genx * porosity * site_blocking * genx_aq // katt*C
-                    + k_desorption_genx * genx_ads                      // kdet*S
-                    + fvOptions(genx_aq));
+                -k_adsorption_pfos * porosity * site_blocking * pfos_aq // katt*C
+                    + k_desorption_pfos * pfos_ads                      // kdet*S
+                    + fvOptions(pfos_aq));
 
-            fvOptions.constrain(Eq_genx_aq);
-            Eq_genx_aq.solve();
-            fvOptions.correct(genx_aq);
+            fvOptions.constrain(Eq_pfos_aq);
+            Eq_pfos_aq.solve();
+            fvOptions.correct(pfos_aq);
 
             // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -171,7 +171,9 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_pfoa_ads(
                 fvm::ddt(pfoa_ads) // dS/dt
                 ==
-                k_adsorption_pfoa * porosity * site_blocking * pfoa_aq - k_desorption_pfoa * pfoa_ads + fvOptions(pfoa_ads));
+                k_adsorption_pfoa * porosity * site_blocking * pfoa_aq // katt*C
+                    - k_desorption_pfoa * pfoa_ads                     // kdet*S
+                    + fvOptions(pfoa_ads));
 
             fvOptions.constrain(Eq_pfoa_ads);
             Eq_pfoa_ads.solve();
@@ -181,7 +183,9 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_pfhxa_ads(
                 fvm::ddt(pfhxa_ads) // dS/dt
                 ==
-                k_adsorption_pfhxa * porosity * site_blocking * pfhxa_aq - k_desorption_pfhxa * pfhxa_ads + fvOptions(pfhxa_ads));
+                k_adsorption_pfhxa * porosity * site_blocking * pfhxa_aq // katt*C
+                    - k_desorption_pfhxa * pfhxa_ads                     // kdet*S
+                    + fvOptions(pfhxa_ads));
 
             fvOptions.constrain(Eq_pfhxa_ads);
             Eq_pfhxa_ads.solve();
@@ -191,7 +195,9 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_pfhxs_ads(
                 fvm::ddt(pfhxs_ads) // dS/dt
                 ==
-                k_adsorption_pfhxs * porosity * site_blocking * pfhxs_aq - k_desorption_pfhxs * pfhxs_ads + fvOptions(pfhxs_ads));
+                k_adsorption_pfhxs * porosity * site_blocking * pfhxs_aq // katt*C
+                    - k_desorption_pfhxs * pfhxs_ads                     // kdet*S
+                    + fvOptions(pfhxs_ads));
 
             fvOptions.constrain(Eq_pfhxs_ads);
             Eq_pfhxs_ads.solve();
@@ -201,7 +207,9 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_bez_ads(
                 fvm::ddt(bez_ads) // dS/dt
                 ==
-                k_adsorption_bez * porosity * site_blocking * bez_aq - k_desorption_bez * bez_ads + fvOptions(bez_ads));
+                k_adsorption_bez * porosity * site_blocking * bez_aq // katt*C
+                    - k_desorption_bez * bez_ads                     // kdet*S
+                    + fvOptions(bez_ads));
 
             fvOptions.constrain(Eq_bez_ads);
             Eq_bez_ads.solve();
@@ -211,7 +219,9 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_dcf_ads(
                 fvm::ddt(dcf_ads) // dS/dt
                 ==
-                k_adsorption_dcf * porosity * site_blocking * dcf_aq - k_desorption_dcf * dcf_ads + fvOptions(dcf_ads));
+                k_adsorption_dcf * porosity * site_blocking * dcf_aq // katt*C
+                    - k_desorption_dcf * dcf_ads                     // kdet*S
+                    + fvOptions(dcf_ads));
 
             fvOptions.constrain(Eq_dcf_ads);
             Eq_dcf_ads.solve();
@@ -221,21 +231,25 @@ int main(int argc, char *argv[])
             fvScalarMatrix Eq_pfba_ads(
                 fvm::ddt(pfba_ads) // dS/dt
                 ==
-                k_adsorption_pfba * porosity * site_blocking * pfba_aq - k_desorption_pfba * pfba_ads + fvOptions(pfba_ads));
+                k_adsorption_pfba * porosity * site_blocking * pfba_aq // katt*C
+                    - k_desorption_pfba * pfba_ads                     // kdet*S
+                    + fvOptions(pfba_ads));
 
             fvOptions.constrain(Eq_pfba_ads);
             Eq_pfba_ads.solve();
             fvOptions.correct(pfba_ads);
 
-            // Adsorbed phase of GENX
-            fvScalarMatrix Eq_genx_ads(
-                fvm::ddt(genx_ads) // dS/dt
+            // Adsorbed phase of PFOS
+            fvScalarMatrix Eq_pfos_ads(
+                fvm::ddt(pfos_ads) // dS/dt
                 ==
-                k_adsorption_genx * porosity * site_blocking * genx_aq - k_desorption_genx * genx_ads + fvOptions(genx_ads));
+                k_adsorption_pfos * porosity * site_blocking * pfos_aq // katt*C
+                    - k_desorption_pfos * pfos_ads                     // kdet*S
+                    + fvOptions(pfos_ads));
 
-            fvOptions.constrain(Eq_genx_ads);
-            Eq_genx_ads.solve();
-            fvOptions.correct(genx_ads);
+            fvOptions.constrain(Eq_pfos_ads);
+            Eq_pfos_ads.solve();
+            fvOptions.correct(pfos_ads);
 
             Foam::Info << endl;
         }

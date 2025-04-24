@@ -11,6 +11,7 @@ from espuma import Case_Directory, Boundary_Probe
 from adsorption_model import (
     ThomasModelParameters,
     ThomasExperimentalSetup,
+    ThomasModel,
     Experiment,
     BreaktroughData,
 )
@@ -283,6 +284,7 @@ def fitting_experiment():
                 porosity=porosity,  # -
             ),
             parameters=ThomasModelParameters(),
+            model=ThomasModel,
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFOA"].to_numpy() / 1000,  # µg/L
@@ -299,6 +301,7 @@ def fitting_experiment():
                 porosity=porosity,  # -
             ),
             parameters=ThomasModelParameters(),
+            model=ThomasModel,
             btc=BreaktroughData(
                 time=data_3min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_3min["PFBA"].to_numpy() / 1000,  # µg/L
@@ -315,6 +318,7 @@ def fitting_experiment():
                 porosity=porosity,  # -
             ),
             parameters=ThomasModelParameters(),
+            model=ThomasModel,
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFOA"].to_numpy() / 1000,  # µg/L
@@ -331,6 +335,7 @@ def fitting_experiment():
                 porosity=porosity,  # -
             ),
             parameters=ThomasModelParameters(),
+            model=ThomasModel,
             btc=BreaktroughData(
                 time=data_10min["Time (s)"].to_numpy() / 3600,  # h
                 conc=data_10min["PFBA"].to_numpy() / 1000,  # µg/L
@@ -338,28 +343,28 @@ def fitting_experiment():
         ),
     ]
 
-    tabs = st.tabs(
-        [f"""{exp.name} - {exp.contaminant}""" for exp in experiments]
-    )
+    tabs = st.tabs([f"""{exp.name} - {exp.contaminant}""" for exp in experiments])
 
     config = dict(
-        initial_guess=ThomasModelParameters(k_T=1e-4, q_m=40, b=1),
-        bounds=Bounds(lb=[1e-5, 0.1, 1e-4], ub=[1e1, 500_000, 1e3]),
-        ftol=1e-5,
+        initial_guess=ThomasModelParameters(k_T=1e-4, q_m=40, b=1e2),
+        bounds=Bounds(lb=[1e-5, 0.1, 1e-4], ub=[1e1, 500_000, 1e6]),
+        curve_fit_kwargs=dict(ftol=1e-5, xtol=1e-5, gtol=1e-5),
     )
 
-    for tab, exp in zip(tabs, experiments):
+    for tab, experiment in zip(tabs, experiments):
         with tab:
-            exp.fit(**config)
-            left, right = st.columns(2)
-            fig = exp.plot_btc()
-            left.pyplot(fig)
-            fig = exp.plot_relative_btc()
-            right.pyplot(fig)
-            left, right = st.columns(2)
-            left.write(exp.report_fit())
-            fig = exp.plot_relative_btc(with_fit=True)
-            right.pyplot(fig)
+            experiment.fit(**config)
+
+            lcol, rcol = st.columns(2)
+            fig = experiment.plot_btc()
+            lcol.pyplot(fig)
+            fig = experiment.plot_relative_btc()
+            rcol.pyplot(fig)
+
+            lcol, rcol = st.columns(2)
+            lcol.write(experiment.report_fit())
+            fig = experiment.plot_relative_btc(with_fit=True)
+            rcol.pyplot(fig)
 
 
 def fitting_while_fixing():
@@ -411,6 +416,7 @@ def fitting_while_fixing():
                 conc=data_3min["PFOA"].to_numpy() / 1000,  # µg/L
             ),
             parameters=ThomasModelParameters(b=261.3),
+            model=ThomasModel,
             # parameters=ThomasModelParameters(q_m=1.156, b=261.3),
         ),
         Experiment(
@@ -428,6 +434,7 @@ def fitting_while_fixing():
                 conc=data_3min["PFBA"].to_numpy() / 1000,  # µg/L
             ),
             parameters=ThomasModelParameters(b=97.27),
+            model=ThomasModel,
             # parameters=ThomasModelParameters(q_m=0.461, b=97.27),
         ),
         Experiment(
@@ -445,6 +452,7 @@ def fitting_while_fixing():
                 conc=data_10min["PFOA"].to_numpy() / 1000,  # µg/L
             ),
             parameters=ThomasModelParameters(b=261.3),
+            model=ThomasModel,
             # parameters=ThomasModelParameters(q_m=1.156, b=261.3),
         ),
         Experiment(
@@ -462,6 +470,7 @@ def fitting_while_fixing():
                 conc=data_10min["PFBA"].to_numpy() / 1000,  # µg/L
             ),
             parameters=ThomasModelParameters(b=97.27),
+            model=ThomasModel,
             # parameters=ThomasModelParameters(q_m=0.461, b=97.27),
         ),
     ]
@@ -476,19 +485,17 @@ def fitting_while_fixing():
     #     bounds=Bounds(lb=[10e-5], ub=[1e1]),
     # )
 
-    tabs = st.tabs(
-        [f"""{exp.name} - {exp.contaminant}""" for exp in experiments]
-    )
+    tabs = st.tabs([f"""{exp.name} - {exp.contaminant}""" for exp in experiments])
 
-    for tab, exp in zip(tabs, experiments):
+    for tab, experiment in zip(tabs, experiments):
         with tab:
-            exp.fit(**config)
+            experiment.fit(**config)
             left, right = st.columns(2)
-            left.pyplot(exp.plot_btc())
-            right.pyplot(exp.plot_relative_btc())
+            left.pyplot(experiment.plot_btc())
+            right.pyplot(experiment.plot_relative_btc())
             left, right = st.columns(2)
-            left.write(exp.report_fit())
-            right.pyplot(exp.plot_relative_btc(with_fit=True))
+            left.write(experiment.report_fit())
+            right.pyplot(experiment.plot_relative_btc(with_fit=True))
 
 
 def rewrite_equations():
@@ -734,12 +741,8 @@ def rewrite_equations():
 
 
 if __name__ == "__main__":
-    data_path_3min = Path(
-        "../../.data/ModelFitting/ThomasBessel_EBCT/EBCT3PFOAPFBA.csv"
-    )
-    data_path_10min = Path(
-        "../../.data/ModelFitting/ThomasBessel_EBCT/ebct10pfoapfba.csv"
-    )
+    data_path_3min = Path("../../.data/ModelFitting/ThomasBessel_EBCT/EBCT3PFOAPFBA.csv")
+    data_path_10min = Path("../../.data/ModelFitting/ThomasBessel_EBCT/ebct10pfoapfba.csv")
 
     data_3min = pd.read_csv(data_path_3min)
     data_10min = pd.read_csv(data_path_10min)

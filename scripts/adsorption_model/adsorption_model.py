@@ -14,6 +14,18 @@ from scipy.special import i0
 from scipy.integrate import quad
 from scipy.optimize import curve_fit, Bounds
 
+
+__all__ = [
+    "UNITS_LUT",
+    "LATEX_LUT",
+    "ThomasModelParameters",
+    "LogThomasModelParameters",
+    "ThomasExperimentalSetup",
+    "ThomasModel",
+    "LogThomasModel",
+    "Experiment",
+]
+
 line_shade = [
     Stroke(linewidth=4, foreground="grey"),
     Normal(),
@@ -51,7 +63,7 @@ LATEX_LUT = dict(
 )
 
 
-def J_function(x: float, y: float | np.ndarray) -> float | np.ndarray:
+def _J_function(x: float, y: float | np.ndarray) -> float | np.ndarray:
     R"""Calculate the J function for the Thomas model"""
 
     def to_integrate(tau, yi):
@@ -68,7 +80,7 @@ def J_function(x: float, y: float | np.ndarray) -> float | np.ndarray:
     return 1 - integral_value
 
 
-class DataclassMapping(Mapping):
+class _DataclassMapping(Mapping):
     @property
     def _asdict(self):
         return asdict(self)
@@ -95,7 +107,7 @@ class DataclassMapping(Mapping):
         return deepcopy(self)
 
 
-class ModelParameters(DataclassMapping):
+class _ModelParameters(_DataclassMapping):
     @property
     def are_fitted(self):
         return all([p is not None for p in self.values()])
@@ -115,26 +127,9 @@ class ModelParameters(DataclassMapping):
     def print_values(self):
         raise NotImplementedError("This should be implemented by child classes")
 
-    def report_fit(self):
-        report = "Best-fit parameters:"
-
-        for k, v in self.parameters.items():
-            report += f"\n- ${LATEX_LUT[k]}$ = {v:.2e} {UNITS_LUT[k]}"
-
-        t = self.btc.time
-        y_obs = self.btc.conc / self.setup.C_0
-        y_fit = self.callable(t, **self.parameters)
-        res_sum = np.sum((y_obs - y_fit) ** 2)
-        variance = np.sum((y_obs - np.mean(y_obs)) ** 2)
-        R_squared = 1 - res_sum / variance
-
-        report += f"\n- R² = {R_squared:.3f}"
-
-        return report
-
 
 @dataclass
-class ThomasModelParameters(ModelParameters):
+class ThomasModelParameters(_ModelParameters):
     k_T: Optional[float] = None  # L/µg.h
     q_m: Optional[float] = None  # µg/g
     b: Optional[float] = None  # L/µg
@@ -153,10 +148,22 @@ class ThomasModelParameters(ModelParameters):
 
 
 @dataclass
-class LogThomasModelParameters(ModelParameters):
+class LogThomasModelParameters(_ModelParameters):
     log_k_T: Optional[float] = None
     log_q_m: Optional[float] = None
     log_b: Optional[float] = None
+
+    @property
+    def k_T(self):
+        return 10.0**self.log_k_T
+
+    @property
+    def q_m(self):
+        return 10.0**self.log_q_m
+
+    @property
+    def b(self):
+        return 10.0**self.log_b
 
     @property
     def latex_lut(self):
@@ -170,9 +177,33 @@ class LogThomasModelParameters(ModelParameters):
         report = [f"${self.latex_lut[k]} = {float_to_scilatex(10**v, 2)}$ {self.units_lut[k]}" for k, v in self.items()]
         return "\n".join(report)
 
+    def convert_to_pfasFoam(self):
+        """Converts the parameters to pfasFoam"""
+        ...
+
 
 @dataclass
-class ThomasExperimentalSetup(DataclassMapping):
+class ThomasExperimentalSetup(_DataclassMapping):
+    """
+    Parameters
+    ==========
+    C_0: float
+        Influent concentration (µg/L)
+    length: float
+        Column length (cm)
+    pore_velocity: float
+        Pore velocity (cm/h). It is calculated as
+        $$
+            flow rate / (porosity * cross_area)
+        $$
+    rho_p: float
+        Adsorbant density (g/cm³)
+    porosity: float
+        Porosity (-) as ratio of void space volume to total volume
+    particle_size: Optional[float] = None
+        Particle size (cm). Not used for any calculations.
+    """
+
     C_0: float
     length: float  # cm
     pore_velocity: float  # cm/h
@@ -182,8 +213,17 @@ class ThomasExperimentalSetup(DataclassMapping):
 
 
 @dataclass
-class BreaktroughData(DataclassMapping):
-    time: np.ndarray  # h
+class BreaktroughData(_DataclassMapping):
+    """
+    Parameters
+    ==========
+    time: np.ndarray
+        Times for the breakthrough data (h)
+    conc: np.ndarray
+        Effluent concentrations (μg/L)
+    """
+
+    time: np.ndarray
     conc: np.ndarray
 
 
@@ -216,8 +256,8 @@ def ThomasModel(
     n = rho_p * q_m * k_T * Z * (1 - porosity) / (v * porosity)
     T = porosity * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - porosity))
 
-    J1 = J_function(n / r, n * T)
-    J2 = J_function(n, n * T / r)
+    J1 = _J_function(n / r, n * T)
+    J2 = _J_function(n, n * T / r)
 
     return J1 / (J1 + (1 - J2) * np.exp((1 - 1 / r) * (n - n * T)))
 
@@ -255,8 +295,8 @@ def LogThomasModel(
     n = rho_p * q_m * k_T * Z * (1 - porosity) / (v * porosity)
     T = porosity * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - porosity))
 
-    J1 = J_function(n / r, n * T)
-    J2 = J_function(n, n * T / r)
+    J1 = _J_function(n / r, n * T)
+    J2 = _J_function(n, n * T / r)
 
     return J1 / (J1 + (1 - J2) * np.exp((1 - 1 / r) * (n - n * T)))
 
@@ -281,7 +321,7 @@ class Experiment:
             self.btc["time"],
             self.btc["conc"],
             label=f"{self.contaminant}\n"
-            rf"$C_0 = {self.setup['C_0']} \text{{µg}}\,\text{{L}}^{{-1}}$",
+            rf"$C_0 = {self.setup['C_0']:.2f} \text{{µg}}\,\text{{L}}^{{-1}}$",
             path_effects=line_shade,
         )
 
@@ -311,7 +351,7 @@ class Experiment:
             self.btc["time"],
             self.btc["conc"] / self.setup["C_0"],
             label=f"{self.contaminant}\n"
-            rf"$C_0 = {self.setup['C_0']} \text{{µg}}\,\text{{L}}^{{-1}}$",
+            rf"$C_0 = {self.setup['C_0']:.2f} \text{{µg}}\,\text{{L}}^{{-1}}$",
             path_effects=line_shade,
         )
 
@@ -349,7 +389,7 @@ class Experiment:
             self.btc["time"] / self.pv,
             self.btc["conc"] / self.setup["C_0"],
             label=f"{self.contaminant}\n"
-            rf"$C_0 = {self.setup['C_0']} \text{{µg}}\,\text{{L}}^{{-1}}$",
+            rf"$C_0 = {self.setup['C_0']:.2f} \text{{µg}}\,\text{{L}}^{{-1}}$",
             path_effects=line_shade,
         )
 
@@ -400,17 +440,9 @@ class Experiment:
             ax.set_ylabel("Rel. Conc. $C/C_0$ [-]")
             return fig
 
-    def fit_vs_btc(self):
-        if not self.parameters.are_fitted:
-            raise ValueError("Parameters are not fitted")
-
-        if self.btc is None:
-            raise ValueError("No breakthrough data provided")
-
-        return {"time": self.btc.time, "obs": self.btc.conc, "sim": self.fit_result[2]["fvec"]}
-
     @property
     def R2(self):
+        """Returns the R² value for the fitted model"""
         if not self.parameters.are_fitted:
             raise ValueError("Parameters are not fitted")
 
@@ -437,6 +469,10 @@ class Experiment:
 
     @property
     def callable(self):
+        """Retuns the callable function for the model selected for the experiment. It
+        autocompletes the parameters with those fixed (i.e., not fitted) and the
+        experimental setup.
+        """
         return partial(
             self.model,
             **self.parameters.fixed_parameters,
@@ -445,13 +481,39 @@ class Experiment:
 
     def fit(
         self,
-        initial_guess: ThomasModelParameters | None = None,
-        bounds: Bounds | None = None,
+        initial_guess: _ModelParameters,
+        bounds: Bounds,
+        mask_data: slice = slice(None),
         loss: str = "soft_l1",
-        ftol: float = 1e-8,
-        xtol: float = 1e-8,
-        gtol: float = 1e-8,
+        curve_fit_kwargs: dict | None = None,
     ):
+        """
+        Fits the model to the breakthrough data.
+
+        Parameters
+        ==========
+        initial_guess: _ModelParameters
+            Initial guess for the parameters. For example, if the model is
+            LogThomasModel, then initial_guess should be a LogThomasModelParameters
+            object.
+        bounds: Bounds
+            Bounds for the parameters. Initialize bounds using the scipy.optimize.Bounds
+            class.
+        mask_data: slice
+            Slice to select the data to fit. For example, if only the first ten points
+            of the breakthrough data are to be used, then mask_data = slice(None, 10).
+        loss: str
+            Loss function to use. See scipy.optimize.curve_fit for more information.
+        curve_fit_kwargs: dict
+            Additional keyword arguments to pass to scipy.optimize.curve_fit. For example,
+            to set the tolerance for the fitting, use
+                    curve_fit_kwargs = {
+                        "ftol": 1e-8,
+                        "xtol": 1e-8,
+                        "gtol": 1e-8,
+                    }
+            See scipy.optimize.curve_fit for more information.
+        """
         if not initial_guess:
             raise ValueError("Initial guess not provided")
 
@@ -461,20 +523,60 @@ class Experiment:
         if self.parameters.are_fitted:
             return
 
+        curve_fit_kwargs = curve_fit_kwargs or {}
+
         cfit = curve_fit(
             self.callable,
-            self.btc.time,
-            self.btc.conc / self.setup.C_0,
+            self.btc.time[mask_data],
+            self.btc.conc[mask_data] / self.setup.C_0,
             p0=list(initial_guess.fixed_parameters.values()),
             bounds=bounds,
             method="trf",
-            full_output=True,
             loss=loss,
-            ftol=ftol,
-            xtol=xtol,
-            gtol=gtol,
+            full_output=True,
+            **curve_fit_kwargs,
         )
 
         self.fit_result = cfit
         for k, v in zip(initial_guess, cfit[0]):
             setattr(self.parameters, k, v)
+
+    def report_fit(self) -> str:
+        """Returns a report of the fitted parameters"""
+
+        if not self.parameters.are_fitted:
+            raise ValueError("Parameters are not fitted")
+
+        report = "Best-fit parameters:"
+
+        for k, v in self.parameters.items():
+            report += f"\n- ${LATEX_LUT[k]}$ = {v:.2e} {UNITS_LUT[k]}"
+
+        t = self.btc.time
+        y_obs = self.btc.conc / self.setup.C_0
+        y_fit = self.callable(t, **self.parameters)
+        res_sum = np.sum((y_obs - y_fit) ** 2)
+        variance = np.sum((y_obs - np.mean(y_obs)) ** 2)
+        R_squared = 1 - res_sum / variance
+
+        report += f"\n- R² = {R_squared:.3f}"
+
+        return report
+
+    def parameters_to_pfasFoam(self) -> dict[str, float]:
+        """Converts the parameters to pfasFoam"""
+        if isinstance(self.parameters, LogThomasModelParameters):
+            k_t = 10.0**self.parameters.log_k_T
+            q_m = 10.0**self.parameters.log_q_m
+            b = 10.0**self.parameters.log_b
+
+        elif isinstance(self.parameters, ThomasModelParameters):
+            k_t = self.parameters.k_T
+            q_m = self.parameters.q_m
+            b = self.parameters.b
+
+        s_m = self.setup.rho_p * (1.0 - self.setup.porosity) * q_m
+        k_ads = k_t * s_m / self.setup.porosity
+        k_des = k_t / b
+
+        return {"s_m": s_m, "k_ads": k_ads, "k_des": k_des}
