@@ -110,14 +110,10 @@ class ModelParameters(DataclassMapping):
 
     @property
     def latex_lut(self):
-        raise NotImplementedError(
-            "This should be implemented by child classes"
-        )
+        raise NotImplementedError("This should be implemented by child classes")
 
     def print_values(self):
-        raise NotImplementedError(
-            "This should be implemented by child classes"
-        )
+        raise NotImplementedError("This should be implemented by child classes")
 
     def report_fit(self):
         report = "Best-fit parameters:"
@@ -152,10 +148,7 @@ class ThomasModelParameters(ModelParameters):
         return dict(k_T="L/µg.h", q_m="µg/g", b="L/µg")
 
     def print_values(self):
-        report = [
-            f"${self.latex_lut[k]} = {float_to_scilatex(v, 2)}$ {self.units_lut[k]}"
-            for k, v in self.items()
-        ]
+        report = [f"${self.latex_lut[k]} = {float_to_scilatex(v, 2)}$ {self.units_lut[k]}" for k, v in self.items()]
         return "\n".join(report)
 
 
@@ -174,10 +167,7 @@ class LogThomasModelParameters(ModelParameters):
         return dict(log_k_T="L/µg.h", log_q_m="µg/g", log_b="L/µg")
 
     def print_values(self):
-        report = [
-            f"${self.latex_lut[k]} = {float_to_scilatex(10**v, 2)}$ {self.units_lut[k]}"
-            for k, v in self.items()
-        ]
+        report = [f"${self.latex_lut[k]} = {float_to_scilatex(10**v, 2)}$ {self.units_lut[k]}" for k, v in self.items()]
         return "\n".join(report)
 
 
@@ -224,12 +214,7 @@ def ThomasModel(
 
     r = 1 + (b * C_0)
     n = rho_p * q_m * k_T * Z * (1 - porosity) / (v * porosity)
-    T = (
-        porosity
-        * (1 / b + C_0)
-        * (v * t / Z - 1)
-        / (rho_p * q_m * (1 - porosity))
-    )
+    T = porosity * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - porosity))
 
     J1 = J_function(n / r, n * T)
     J2 = J_function(n, n * T / r)
@@ -268,12 +253,7 @@ def LogThomasModel(
 
     r = 1 + (b * C_0)
     n = rho_p * q_m * k_T * Z * (1 - porosity) / (v * porosity)
-    T = (
-        porosity
-        * (1 / b + C_0)
-        * (v * t / Z - 1)
-        / (rho_p * q_m * (1 - porosity))
-    )
+    T = porosity * (1 / b + C_0) * (v * t / Z - 1) / (rho_p * q_m * (1 - porosity))
 
     J1 = J_function(n / r, n * T)
     J2 = J_function(n, n * T / r)
@@ -420,6 +400,15 @@ class Experiment:
             ax.set_ylabel("Rel. Conc. $C/C_0$ [-]")
             return fig
 
+    def fit_vs_btc(self):
+        if not self.parameters.are_fitted:
+            raise ValueError("Parameters are not fitted")
+
+        if self.btc is None:
+            raise ValueError("No breakthrough data provided")
+
+        return {"time": self.btc.time, "obs": self.btc.conc, "sim": self.fit_result[2]["fvec"]}
+
     @property
     def R2(self):
         if not self.parameters.are_fitted:
@@ -444,9 +433,7 @@ class Experiment:
             raise ValueError("Experiment has no defined particle size")
 
         kin_viscosity = 36  # cm²/h = 10⁻⁶ m²/s
-        return (
-            self.setup.particle_size * self.setup.pore_velocity / kin_viscosity
-        )
+        return self.setup.particle_size * self.setup.pore_velocity / kin_viscosity
 
     @property
     def callable(self):
