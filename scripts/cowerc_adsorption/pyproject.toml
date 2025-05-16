@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cowerc_adsorption"
+version = "0.0.1"
+authors = [
+    { name = "Edwin Saavedra C.", email = "esaavedrac@u.northwestern.edu" },
+]
+description = "Adsorption modeling for column experiments."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["numpy", "matplotlib", "numba"]
+
+[project.urls]
+Homepage = "https://github.com/edsaac/cowerc-adsorption"
+Issues = "https://github.com/edsaac/cowerc-adsorption/issues"
