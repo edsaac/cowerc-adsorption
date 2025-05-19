@@ -166,6 +166,7 @@ class Simulation:
         c[:, 0] = self.bc[:]
 
         # Initialize time index
+        ## :TODO: Use xarray to store all the results
         self.times: dict[str, dict[str, np.ndarray]] = {}
         self.times[f"{self.t:.2f}"] = {
             "c": c.copy(),
@@ -205,7 +206,12 @@ class Simulation:
 
         @jit
         def _advance_timestep(previous_step: tuple[NDArray, NDArray], next_step: tuple[NDArray, NDArray], *args):
-            """Huckery-pockery with slices and numba to go brr"""
+            """Jiggery-pokery with slices and numba to go brr
+
+            Previous step is (c, s) and next step is (c_new, s_new). Those are just references to the arrays,
+            not actual copies so operations in this function are done in-place. That is why we do not return
+            anything.
+            """
             c, s = previous_step
             c_new, s_new = next_step
             Dam_ads, Dam_des, psi, bc, dt, dz = args
@@ -263,6 +269,7 @@ class Simulation:
             sharey=True,
             gridspec_kw={"wspace": 0.05, "hspace": 0.15},
             figsize=(8, 10),
+            squeeze=False,
         )
         for ax in axes.flatten():
             ax.set_prop_cycle(plt.cycler("color", plt.cm.GnBu(np.linspace(0.10, 0.90, n_colors))))
@@ -315,6 +322,7 @@ class Simulation:
             sharey=True,
             gridspec_kw={"wspace": 0.05, "hspace": 0.20},
             figsize=(12, self.N * 4),
+            squeeze=False,
         )
 
         for ax in axes.flatten():
@@ -325,14 +333,15 @@ class Simulation:
             ax.set_xlim(0, self.end_time)
 
         axc, axs = axes
-        cmaps = cycle(["Greys", "Purples", "Blues", "Greens", "Oranges", "Reds"])
-        for i, (ax, ci, cmap) in enumerate(zip(axc, c, cmaps), start=1):
-            ax.pcolormesh(t, z, ci, cmap=cmap, rasterized=True)
+        pcm_kwargs = dict(cmap="bone_r", rasterized=True, vmin=0, vmax=1)
+        for i, (ax, ci) in enumerate(zip(axc, c), start=1):
+            im = ax.pcolormesh(t, z, ci, **pcm_kwargs)
+            plt.colorbar(im, label=Rf"$\hat{{c}}_{i}$", aspect=10, shrink=0.8)
             ax.set_title(Rf"$\hat{{c}}_{i}$", fontsize=14)
 
-        cmaps = cycle(["Greys", "Purples", "Blues", "Greens", "Oranges", "Reds"])
-        for i, (ax, si, cmap) in enumerate(zip(axs, s, cmaps), start=1):
-            ax.pcolormesh(t, z, si, cmap=cmap, rasterized=True)
+        for i, (ax, si) in enumerate(zip(axs, s), start=1):
+            im = ax.pcolormesh(t, z, si, **pcm_kwargs)
+            plt.colorbar(im, label=Rf"$\hat{{s}}_{i}$")
             ax.set_title(Rf"$\hat{{s}}_{i}$", fontsize=14)
 
         fig.supxlabel(R"$\hat{t}$", fontsize=14, y=0.02)
@@ -352,6 +361,7 @@ class Simulation:
         fig, ax = plt.subplots(figsize=(6, 3.5))
         colors = cycle(["darkgrey", "purple", "blue", "green", "orange", "red"])
 
+        max_btc = 1.0
         for i, (curve, color) in enumerate(zip(btc, colors), start=1):
             ax.plot(
                 *(t, curve),
@@ -360,13 +370,63 @@ class Simulation:
                 c=color,
                 label=Rf"$\hat{{c}}_{i}$",
             )
+            max_btc = max(max_btc, max(curve))
 
         ax.set_facecolor("#FFFFFF80")
         ax.spines.right.set_visible(False)
         ax.spines.top.set_visible(False)
         ax.set_ylabel(R"$\hat{c}$", fontsize=14)
         ax.set_xlabel(R"$\hat{t}$", fontsize=14)
-        ax.set_ylim(-0.05, 1.1)
+        ax.set_ylim(-0.05, 1.1 * max_btc)
+        ax.axhline(y=1, lw=1, ls="dotted", c="k")
+        ax.legend(
+            title=R"$\hat{c}_j\left( \hat{t} \right)$",
+            fontsize=10,
+            loc="center left",
+            bbox_to_anchor=(1.01, 0.5),
+        )
+
+        fig.set_facecolor("#FFFFFF80")
+
+        plt.close()
+        return fig
+
+
+@dataclass
+class ExperimentalBreakthroughData:
+    """
+    Parameters
+    ----------
+    time: NDArray
+        Non-dimensional times for the breakthrough data (-)
+    conc: NDArray
+        Non-dimensional effluent concentrations (-)
+    """
+
+    time: NDArray
+    conc: NDArray
+
+    def plot_breakthrough(self) -> plt.Figure:
+        fig, ax = plt.subplots(figsize=(6, 3.5))
+        colors = cycle(["darkgrey", "purple", "blue", "green", "orange", "red"])
+
+        max_btc = 1.0
+        for i, (curve, color) in enumerate(zip(self.conc, colors), start=1):
+            ax.scatter(
+                *(self.time, curve),
+                path_effects=[patheffects.withStroke(linewidth=4, foreground="grey")],
+                size=10,
+                c=color,
+                label=Rf"$\hat{{c}}_{i}$",
+            )
+            max_btc = max(max_btc, max(curve))
+
+        ax.set_facecolor("#FFFFFF80")
+        ax.spines.right.set_visible(False)
+        ax.spines.top.set_visible(False)
+        ax.set_ylabel(R"$\hat{c}$", fontsize=14)
+        ax.set_xlabel(R"$\hat{t}$", fontsize=14)
+        ax.set_ylim(-0.05, 1.1 * max_btc)
         ax.axhline(y=1, lw=1, ls="dotted", c="k")
         ax.legend(
             title=R"$\hat{c}_j\left( \hat{t} \right)$",
