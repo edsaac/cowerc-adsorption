@@ -7,6 +7,7 @@ from dataclasses import dataclass
 import numpy as np
 from numpy.typing import NDArray, ArrayLike
 from numba import jit
+import pandas as pd
 
 import matplotlib.pyplot as plt
 from matplotlib import patheffects
@@ -33,24 +34,26 @@ class PhysicalParams:
 
     Parameters
     ----------
-    sm: float
-        Adsorption capacity of the adsorbate [M/L³]
     L: float
         Length of the column [L]
     v: float
         Pore velocity through the column [L/T]
+    n: float
+        Porosity (L³/L³)
+    sm: float
+        Adsorption capacity of the adsorbate [M/L³]
     k_ads: ArrayLike
         Adsorption rate constant [1/T] for each contaminant
     k_des: ArrayLike
         Desorption rate constant [1/T] for each contaminant
-    C_0: ArrayLike
+    C_0: Optional[ArrayLike] = None
         Initial concentration of each contaminant [M]
     """
 
-    sm: float
     L: float
     v: float
     n: float
+    sm: float
     k_ads: ArrayLike
     k_des: ArrayLike
     C_0: Optional[ArrayLike] = None
@@ -110,7 +113,18 @@ class PhysicalParams:
         NDArray
             Non-dimensional parameter psi
         """
-        return self.n * self.k_ads * self.C_0 / (self.k_des * self.sm)
+        return self.k_ads / self.k_des
+
+    @property
+    def kappa(self) -> NDArray:
+        """Non-dimensional parameter kappa
+
+        Returns
+        -------
+        NDArray
+            Non-dimensional parameter psi
+        """
+        return self.n * self.C_0 / self.sm
 
     @property
     def nondim(self) -> dict[str, NDArray]:
@@ -123,7 +137,7 @@ class PhysicalParams:
         return {
             "Dam_ads": self.Dam_ads,
             "Dam_des": self.Dam_des,
-            "psi": self.psi,
+            "kappa": self.kappa,
             "bc": self.C_0,
         }
 
@@ -132,7 +146,7 @@ class PhysicalParams:
 class Simulation:
     Dam_ads: NDArray
     Dam_des: NDArray
-    psi: NDArray
+    kappa: NDArray
     bc: NDArray
 
     def __post_init__(self):
@@ -140,7 +154,7 @@ class Simulation:
         if any(
             [
                 (self.Dam_ads.shape != self.Dam_des.shape),
-                (self.Dam_ads.shape != self.psi.shape),
+                (self.Dam_ads.shape != self.kappa.shape),
                 (self.Dam_ads.shape != self.bc.shape),
             ]
         ):
@@ -173,8 +187,19 @@ class Simulation:
             "s": s.copy(),
         }
 
+    @property
+    def psi(self) -> NDArray:
+        """Non-dimensional parameter psi
+
+        Returns
+        -------
+        NDArray
+            Non-dimensional parameter psi
+        """
+        return self.Dam_ads / self.Dam_des
+
     def _get_params_for_numba(self):
-        return (self.Dam_ads, self.Dam_des, self.psi, self.bc, self.dt, self.dz)
+        return (self.Dam_ads, self.Dam_des, self.kappa, self.bc, self.dt, self.dz)
 
     @property
     def btc(self) -> tuple[list[float], NDArray]:
@@ -188,6 +213,14 @@ class Simulation:
         tp = list(map(float, self.times.keys()))
         btc = np.vstack([x["c"][:, -1] for x in self.times.values()]).T
         return tp, btc
+
+    def btc_df(self) -> pd.DataFrame:
+        df = pd.DataFrame({}, index=self.btc[0])
+
+        for i, ci in enumerate(self.btc[1]):
+            df[f"conc_{i}"] = ci
+
+        return df
 
     @_timer
     def solve(self) -> None:
@@ -214,17 +247,21 @@ class Simulation:
             """
             c, s = previous_step
             c_new, s_new = next_step
-            Dam_ads, Dam_des, psi, bc, dt, dz = args
+            Dam_ads, Dam_des, kappa, bc, dt, dz = args
 
             c_new[:, 0] = bc[:]
 
             c_new[:, 1:] = (
-                dt * Dam_ads[:, None] * (-c[:, 1:] * (1 - np.sum(s[:, 1:], axis=0)) + (1.0 / psi[:, None]) * s[:, 1:])
+                dt
+                * (
+                    -Dam_ads[:, None] * c[:, 1:] * (1 - np.sum(s[:, 1:], axis=0))
+                    + (Dam_des[:, None] / kappa[:, None]) * s[:, 1:]
+                )
                 - dt / dz * (c[:, 1:] - c[:, :-1])
                 + c[:, 1:]
             )
 
-            s_new[:] = dt * Dam_des[:, None] * (psi[:, None] * c * (1 - np.sum(s, axis=0)) - s) + s
+            s_new[:] = dt * (kappa[:, None] * Dam_ads[:, None] * c * (1 - np.sum(s, axis=0)) - Dam_des[:, None] * s) + s
 
         while self.t < self.end_time:
             # Advance the timestep
@@ -415,7 +452,7 @@ class ExperimentalBreakthroughData:
             ax.scatter(
                 *(self.time, curve),
                 path_effects=[patheffects.withStroke(linewidth=4, foreground="grey")],
-                size=10,
+                s=10,
                 c=color,
                 label=Rf"$\hat{{c}}_{i}$",
             )
