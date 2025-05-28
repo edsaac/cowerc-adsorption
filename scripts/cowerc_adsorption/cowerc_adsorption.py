@@ -142,6 +142,37 @@ class PhysicalParams:
         }
 
 
+@jit
+def _advance_timestep(previous_step: tuple[NDArray, NDArray], next_step: tuple[NDArray, NDArray], *args):
+    """Jiggery-pokery with slices and numba to go brr
+
+    Previous step is (c, s) and next step is (c_new, s_new). Those are just references to the arrays,
+    not actual copies so operations in this function are done in-place. That is why we do not return
+    anything.
+
+    Keeping the while loop outside the compiled function gives slightly better performance
+    than keeping it inside. Compilation is lazy so it doesn't happen until the function is called -- which is why
+    the first timestep will be slower. Keeping this function outside the class avoids recompilation every timestep.
+    """
+    c, s = previous_step
+    c_new, s_new = next_step
+    Dam_ads, Dam_des, kappa, bc, dt, dz = args
+
+    c_new[:, 0] = bc[:]
+
+    c_new[:, 1:] = (
+        dt
+        * (
+            -Dam_ads[:, None] * c[:, 1:] * (1 - np.sum(s[:, 1:], axis=0))
+            + (Dam_des[:, None] / kappa[:, None]) * s[:, 1:]
+        )
+        - dt / dz * (c[:, 1:] - c[:, :-1])
+        + c[:, 1:]
+    )
+
+    s_new[:] = dt * (kappa[:, None] * Dam_ads[:, None] * c * (1 - np.sum(s, axis=0)) - Dam_des[:, None] * s) + s
+
+
 @dataclass
 class Simulation:
     Dam_ads: NDArray
@@ -167,7 +198,7 @@ class Simulation:
         self.z = np.arange(0, 1 + self.dz, self.dz)
 
         ## Time stepping controls
-        self.dt = 0.1 * self.dz
+        self.cfl = 0.2
         self.write_every = 10
         self.end_time = 50
         self.t = 0
@@ -186,6 +217,17 @@ class Simulation:
             "c": c.copy(),
             "s": s.copy(),
         }
+
+    @property
+    def dt(self) -> float:
+        """Time step
+
+        Returns
+        -------
+        float
+            Time step
+        """
+        return self.cfl * self.dz
 
     @property
     def psi(self) -> NDArray:
@@ -236,32 +278,6 @@ class Simulation:
 
         c_new = np.zeros_like(c)
         s_new = np.zeros_like(s)
-
-        @jit
-        def _advance_timestep(previous_step: tuple[NDArray, NDArray], next_step: tuple[NDArray, NDArray], *args):
-            """Jiggery-pokery with slices and numba to go brr
-
-            Previous step is (c, s) and next step is (c_new, s_new). Those are just references to the arrays,
-            not actual copies so operations in this function are done in-place. That is why we do not return
-            anything.
-            """
-            c, s = previous_step
-            c_new, s_new = next_step
-            Dam_ads, Dam_des, kappa, bc, dt, dz = args
-
-            c_new[:, 0] = bc[:]
-
-            c_new[:, 1:] = (
-                dt
-                * (
-                    -Dam_ads[:, None] * c[:, 1:] * (1 - np.sum(s[:, 1:], axis=0))
-                    + (Dam_des[:, None] / kappa[:, None]) * s[:, 1:]
-                )
-                - dt / dz * (c[:, 1:] - c[:, :-1])
-                + c[:, 1:]
-            )
-
-            s_new[:] = dt * (kappa[:, None] * Dam_ads[:, None] * c * (1 - np.sum(s, axis=0)) - Dam_des[:, None] * s) + s
 
         while self.t < self.end_time:
             # Advance the timestep
