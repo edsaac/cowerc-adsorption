@@ -1,16 +1,18 @@
-import streamlit as st
 from itertools import cycle
-
-from cowerc_adsorption import PhysicalParams, Simulation, ExperimentalBreakthroughData
-import matplotlib.pyplot as plt
-import numpy as np
-
-from matplotlib.patheffects import Stroke
 from math import pi
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
-from scipy.optimize import Bounds, curve_fit
+import streamlit as st
+from matplotlib.patheffects import Stroke
+
+from cowerc_adsorption import (
+    PhysicalParams,
+    Simulation,
+    ExperimentalBreakthroughData,
+)
+
 
 st.set_page_config(layout="wide")
 
@@ -33,6 +35,9 @@ if "experimental" not in st.session_state:
     experimental_data = ExperimentalBreakthroughData(
         time=np.round((xls_btc["Time (min.)"] * lenght / pore_velocity), 2).to_numpy(),
         conc=xls_btc[["PFBA C/C0", "BEZ C/C0", "PFHxA C/C0", "DCF C/C0", "PFOA C/C0", "PFHxS C/C0"]].to_numpy().T,
+        c_0=xls_influent.set_index("Unnamed: 3")
+        .loc["Influent AVG"][["PFBA", "BEZ", "PFHxA", "DCF", "PFOA", "PFHxS"]]
+        .to_numpy(),
     )
 
     st.session_state["experimental"] = experimental_data
@@ -54,28 +59,30 @@ with rcol:
         st.pyplot(fig)
 
 with lcol:
-    sm = st.number_input("$s_m$", value=2000, min_value=1, max_value=100000, step=100)
+    sm = st.number_input("$\\log s_m$", value=5.4, min_value=0.0, max_value=15.0, step=0.2)
 
     llcol, lrcol = st.columns(2)
 
     with llcol:
+        k_ads = (1.63, 1.24, 1.21, 1.22, 1.40, 1.57)
         k_ads = [
-            st.number_input(f"$\\log k_{{ads|{i}}}$", value=1.5, min_value=-8.0, max_value=10.0, step=0.1)
-            for i in range(1, 7)
+            st.number_input(f"$\\log k_{{ads|{i}}}$", value=k, min_value=-8.0, max_value=10.0, step=0.1)
+            for i, k in enumerate(k_ads, start=1)
         ]
 
     with lrcol:
-        k_des = (1.5, 0.5, 0.15, 0.10, 0.02, 0.01)
+        k_des = (3.79e-01, -7.31e-01, -1.61e00, -1.81e00, -2.29e00, -2.62e0)
         k_des = [
-            st.number_input(f"$\\log k_{{des|{i}}}$", value=np.log10(k), min_value=-8.0, max_value=10.0, step=0.1)
+            st.number_input(f"$\\log k_{{des|{i}}}$", value=k, min_value=-8.0, max_value=10.0, step=0.1)
             for i, k in enumerate(k_des, start=1)
         ]
 
     p = PhysicalParams(
         **st.session_state["physical"],
-        sm=sm,
+        sm=10**sm,
         k_ads=[10**k for k in k_ads],
         k_des=[10**k for k in k_des],
+        C_0=experimental_data.c_0,
     )
 
     sim = Simulation(**p.nondim)

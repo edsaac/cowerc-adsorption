@@ -181,11 +181,13 @@ cython_debug/
 
 # OstrichModel run
 **/OstrichRun_*/
+**/BoxCoxModel/
 **/OstOutput*.txt
 **/OstModel*.txt
 **/OstResiduals*.txt
 **/OstProgress*.txt
 **/OstStatus*.txt
+**/OstErrors*.txt
 
 # Experimental data
 .data/

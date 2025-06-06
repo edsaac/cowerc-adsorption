@@ -28,6 +28,9 @@ def _timer(func):
     return wrapper_timer
 
 
+_COLORS = ["darkgrey", "purple", "blue", "green", "orange", "red", "pink"]
+
+
 @dataclass
 class PhysicalParams:
     """Physical parameters for the adsorption model
@@ -46,8 +49,8 @@ class PhysicalParams:
         Adsorption rate constant [1/T] for each contaminant
     k_des: ArrayLike
         Desorption rate constant [1/T] for each contaminant
-    C_0: Optional[ArrayLike] = None
-        Initial concentration of each contaminant [M]
+    C_0: ArrayLike
+        Initial concentration of each contaminant [M/L³]
     """
 
     L: float
@@ -56,17 +59,15 @@ class PhysicalParams:
     sm: float
     k_ads: ArrayLike
     k_des: ArrayLike
-    C_0: Optional[ArrayLike] = None
+    C_0: ArrayLike
 
     def __post_init__(self) -> None:
         self.k_ads = np.array(self.k_ads)
         self.k_des = np.array(self.k_des)
+        self.C_0 = np.array(self.C_0)
 
         if self.k_ads.shape != self.k_des.shape:
             raise ValueError("k_ads and k_des must have the same shape")
-
-        if self.C_0 is None:
-            self.C_0 = np.ones_like(self.k_ads)
 
         if self.k_ads.shape != self.C_0.shape:
             raise ValueError("k_ads and C_0 must have the same shape")
@@ -138,7 +139,7 @@ class PhysicalParams:
             "Dam_ads": self.Dam_ads,
             "Dam_des": self.Dam_des,
             "kappa": self.kappa,
-            "bc": self.C_0,
+            "bc": np.ones_like(self.C_0),
         }
 
 
@@ -264,7 +265,7 @@ class Simulation:
 
         return df
 
-    @_timer
+    # @_timer
     def solve(self) -> None:
         """Numerical solution of the mass balance equations using an explicit
         finite difference method
@@ -454,14 +455,17 @@ class ExperimentalBreakthroughData:
         Non-dimensional times for the breakthrough data (-)
     conc: NDArray
         Non-dimensional effluent concentrations (-)
+    init_conc: NDArray
+        Initial concentrations [mass/volume]
     """
 
     time: NDArray
     conc: NDArray
+    c_0: ArrayLike
 
     def plot_breakthrough(self) -> plt.Figure:
         fig, ax = plt.subplots(figsize=(6, 3.5))
-        colors = cycle(["darkgrey", "purple", "blue", "green", "orange", "red"])
+        colors = cycle(_COLORS)
 
         max_btc = 1.0
         for i, (curve, color) in enumerate(zip(self.conc, colors), start=1):
@@ -492,3 +496,27 @@ class ExperimentalBreakthroughData:
 
         plt.close()
         return fig
+
+    def print_observations_OSTRICH(self) -> None:
+        """Print observations for Ostrich"""
+        for i, c in enumerate(self.conc.flatten(), 0):
+            print(f"obs{i}\t{c:.4f}\t1\tresults.dat\tOST_NULL\t{i}\t1")
+
+
+def plot_btc_and_data(simulation: Simulation, experimental_data: ExperimentalBreakthroughData):
+    """Plot breakthrough curves from an simulation along with experimental data"""
+    fig = simulation.plot_breakthrough()
+    ax = fig.axes[0]
+    colors = cycle(_COLORS)
+
+    for btc, color in zip(experimental_data.conc, colors):
+        ax.scatter(
+            experimental_data.time,
+            btc,
+            c=color,
+            path_effects=[patheffects.Stroke(linewidth=1, foreground="#000")],
+        )
+
+    ax.set_ylim(bottom=-0.09, top=1.4)
+    plt.close(fig)
+    return fig

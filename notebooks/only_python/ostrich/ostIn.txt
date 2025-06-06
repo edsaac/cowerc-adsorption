@@ -14,7 +14,7 @@ ModelExecutable	./ostrich_model.py
 #Parameter Specification
 BeginParams
 #parameter	init.   low	    high	tx_in  tx_ost	tx_out
-<tot_sm>	3.00	1.00	5.0	none	none	none
+<tot_sm>	5.00	1.00	20.	none	none	none
 <kads_1>	1.70	-4.0	2.0	none	none	none
 <kads_2>	1.40	-4.0	2.0	none	none	none
 <kads_3>	1.48	-4.0	2.0	none	none	none
@@ -120,8 +120,8 @@ EndAPPSO
 
 # Configuration for Particle Swarm Optimization
 BeginParticleSwarm
-SwarmSize	20
-NumGenerations	50
+SwarmSize	320
+NumGenerations	100
 ConstrictionFactor	1
 CognitiveParam	2
 SocialParam	2
