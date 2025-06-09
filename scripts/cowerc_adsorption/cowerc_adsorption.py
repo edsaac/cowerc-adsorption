@@ -1,7 +1,7 @@
 import functools
 from time import perf_counter
 from itertools import cycle
-from typing import Optional, Iterable
+from typing import Iterable
 from dataclasses import dataclass
 
 import numpy as np

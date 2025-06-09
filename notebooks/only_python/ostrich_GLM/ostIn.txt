@@ -14,19 +14,19 @@ ModelExecutable	./ostrich_model.py
 #Parameter Specification
 BeginParams
 #parameter	init.   low	    high	tx_in  tx_ost	tx_out
-<tot_sm>	5.00	1.00	20.	none	none	none
-<kads_1>	1.70	-4.0	2.0	none	none	none
-<kads_2>	1.40	-4.0	2.0	none	none	none
-<kads_3>	1.48	-4.0	2.0	none	none	none
-<kads_4>	1.48	-4.0	2.0	none	none	none
-<kads_5>	1.78	-4.0	2.0	none	none	none
-<kads_6>	1.84	-4.0	2.0	none	none	none
-<kdes_1>	1.50	-5.0	1.0	none	none	none
-<kdes_2>	0.30	-5.0	1.0	none	none	none
-<kdes_3>	-0.40	-5.0	1.0	none	none	none
-<kdes_4>	-1.70	-5.0	1.0	none	none	none
-<kdes_5>	-1.60	-5.0	1.0	none	none	none
-<kdes_6>	-1.82	-5.0	1.0	none	none	none
+<tot_sm>	2.85	0.00	10.	none	none	none
+<kads_1>	1.64	-4.0	3.0	none	none	none
+<kads_2>	1.27	-4.0	3.0	none	none	none
+<kads_3>	1.22	-4.0	3.0	none	none	none
+<kads_4>	1.23	-4.0	3.0	none	none	none
+<kads_5>	1.52	-4.0	3.0	none	none	none
+<kads_6>	1.60	-4.0	3.0	none	none	none
+<kdes_1>	0.40	-5.0	2.0	none	none	none
+<kdes_2>	-0.62	-5.0	2.0	none	none	none
+<kdes_3>	-1.75	-5.0	2.0	none	none	none
+<kdes_4>	-1.92	-5.0	2.0	none	none	none
+<kdes_5>	-2.68	-5.0	2.0	none	none	none
+<kdes_6>	-2.72	-5.0	2.0	none	none	none
 EndParams
 
 #Observation Configuration

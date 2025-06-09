@@ -9,7 +9,10 @@ if __name__ == "__main__":
     pore_velocity = 9.645754126781533
     porosity = 0.5
     times_to_query = [2.64, 8.09, 24.43, 68.33, 112.34, 204.95, 253.98, 299.91, 345.84, 437.7, 529.56, 601.92]
+
     c_0 = [166.5, 363.83, 168.33, 333.33, 178.5, 378.0]
+    molecular_weight = np.array([214.04, 361.8, 314.05, 296.1, 414.1, 400.11])
+    c_0 = c_0 / molecular_weight
 
     ## Read model parameters
     with open("./parameters.dat", "r") as f:
