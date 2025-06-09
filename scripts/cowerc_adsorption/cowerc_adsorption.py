@@ -143,7 +143,7 @@ class PhysicalParams:
         }
 
 
-@jit
+@jit(cache=True)
 def _advance_timestep(previous_step: tuple[NDArray, NDArray], next_step: tuple[NDArray, NDArray], *args):
     """Jiggery-pokery with slices and numba to go brr
 
