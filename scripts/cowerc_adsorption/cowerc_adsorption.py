@@ -28,7 +28,7 @@ def _timer(func):
     return wrapper_timer
 
 
-_COLORS = ["darkgrey", "purple", "blue", "green", "orange", "red", "pink"]
+_COLORS = ["darkgrey", "purple", "blue", "green", "orange", "red", "hotpink"]
 
 
 @dataclass

@@ -1,0 +1,15 @@
+<tot_sm>
+<kads_1>
+<kads_2>
+<kads_3>
+<kads_4>
+<kads_5>
+<kads_6>
+<kads_7>
+<kdes_1>
+<kdes_2>
+<kdes_3>
+<kdes_4>
+<kdes_5>
+<kdes_6>
+<kdes_7>

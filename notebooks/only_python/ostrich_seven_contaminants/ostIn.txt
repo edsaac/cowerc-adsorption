@@ -1,0 +1,340 @@
+#Configuration File for Ostrich Program
+#ProgramType	APPSO
+#ProgramType ParticleSwarm
+ProgramType Levenberg-Marquardt
+ObjectiveFunction	WSSE
+ModelSubdir	OstrichRun_
+
+BeginFilePairs
+parameters.tpl	parameters.dat
+EndFilePairs
+
+ModelExecutable	./ostrich_model.py
+
+#Parameter Specification
+BeginParams
+#parameter	init.   low	    high	tx_in  tx_ost	tx_out
+<tot_sm>	7.00	0.00	10.	none	none	none
+<kads_1>	2.00	-2.0	4.0	none	none	none
+<kads_2>	2.00	-2.0	4.0	none	none	none
+<kads_3>	2.00	-2.0	4.0	none	none	none
+<kads_4>	2.00	-2.0	4.0	none	none	none
+<kads_5>	2.00	-2.0	4.0	none	none	none
+<kads_6>	2.00	-2.0	4.0	none	none	none
+<kads_7>	2.00	-2.0	4.0	none	none	none
+<kdes_1>	-1.20	-4.0	2.0	none	none	none
+<kdes_2>	-1.42	-4.0	2.0	none	none	none
+<kdes_3>	-1.65	-4.0	2.0	none	none	none
+<kdes_4>	-1.82	-4.0	2.0	none	none	none
+<kdes_5>	-2.08	-4.0	2.0	none	none	none
+<kdes_6>	-2.22	-4.0	2.0	none	none	none
+<kdes_7>	-2.42	-4.0	2.0	none	none	none
+EndParams
+
+#Observation Configuration
+BeginObservations
+#obs	value	weight	file		keyword		l	col
+#<name1><value1><wgt1><file1><sep1><key1><line1><col1><tok1><aug1><grp1>
+obs0	0.0000	0.01	results.dat	OST_NULL	0	1
+obs1	0.0000	0.01	results.dat	OST_NULL	1	1
+obs2	0.0000	0.01	results.dat	OST_NULL	2	1
+obs3	0.0000	0.01	results.dat	OST_NULL	3	1
+obs4	0.0000	0.01	results.dat	OST_NULL	4	1
+obs5	0.0000	0.01	results.dat	OST_NULL	5	1
+obs6	0.0000	0.01	results.dat	OST_NULL	6	1
+obs7	0.0000	0.01	results.dat	OST_NULL	7	1
+obs8	0.0000	0.01	results.dat	OST_NULL	8	1
+obs9	0.0002	1	results.dat	OST_NULL	9	1
+obs10	0.0026	1	results.dat	OST_NULL	10	1
+obs11	0.0066	1	results.dat	OST_NULL	11	1
+obs12	0.0046	1	results.dat	OST_NULL	12	1
+obs13	0.0077	1	results.dat	OST_NULL	13	1
+obs14	0.0098	1	results.dat	OST_NULL	14	1
+obs15	0.0293	1	results.dat	OST_NULL	15	1
+obs16	0.0700	1	results.dat	OST_NULL	16	1
+obs17	0.0579	1	results.dat	OST_NULL	17	1
+obs18	0.1267	1	results.dat	OST_NULL	18	1
+obs19	0.7824	1	results.dat	OST_NULL	19	1
+obs20	2.0887	1	results.dat	OST_NULL	20	1
+obs21	2.8672	1	results.dat	OST_NULL	21	1
+obs22	2.8524	1	results.dat	OST_NULL	22	1
+obs23	1.6228	1	results.dat	OST_NULL	23	1
+obs24	1.4669	1	results.dat	OST_NULL	24	1
+obs25	1.4425	1	results.dat	OST_NULL	25	1
+obs26	1.5237	1	results.dat	OST_NULL	26	1
+obs27	1.4918	1	results.dat	OST_NULL	27	1
+obs28	1.3243	1	results.dat	OST_NULL	28	1
+obs29	1.3633	1	results.dat	OST_NULL	29	1
+obs30	1.4155	1	results.dat	OST_NULL	30	1
+obs31	1.1119	1	results.dat	OST_NULL	31	1
+obs32	1.1159	1	results.dat	OST_NULL	32	1
+obs33	1.1867	1	results.dat	OST_NULL	33	1
+obs34	1.0076	1	results.dat	OST_NULL	34	1
+obs35	1.0131	1	results.dat	OST_NULL	35	1
+obs36	0.9101	1	results.dat	OST_NULL	36	1
+obs37	0.0000	0.01	results.dat	OST_NULL	37	1
+obs38	0.0000	0.01	results.dat	OST_NULL	38	1
+obs39	0.0000	0.01	results.dat	OST_NULL	39	1
+obs40	0.0000	0.01	results.dat	OST_NULL	40	1
+obs41	0.0000	0.01	results.dat	OST_NULL	41	1
+obs42	0.0006	1	results.dat	OST_NULL	42	1
+obs43	0.0009	1	results.dat	OST_NULL	43	1
+obs44	0.0014	1	results.dat	OST_NULL	44	1
+obs45	0.0050	1	results.dat	OST_NULL	45	1
+obs46	0.0072	1	results.dat	OST_NULL	46	1
+obs47	0.0090	1	results.dat	OST_NULL	47	1
+obs48	0.0097	1	results.dat	OST_NULL	48	1
+obs49	0.0093	1	results.dat	OST_NULL	49	1
+obs50	0.0107	1	results.dat	OST_NULL	50	1
+obs51	0.0114	1	results.dat	OST_NULL	51	1
+obs52	0.0165	1	results.dat	OST_NULL	52	1
+obs53	0.0353	1	results.dat	OST_NULL	53	1
+obs54	0.0285	1	results.dat	OST_NULL	54	1
+obs55	0.0460	1	results.dat	OST_NULL	55	1
+obs56	0.2188	1	results.dat	OST_NULL	56	1
+obs57	0.3693	1	results.dat	OST_NULL	57	1
+obs58	0.5610	1	results.dat	OST_NULL	58	1
+obs59	0.6256	1	results.dat	OST_NULL	59	1
+obs60	0.5281	1	results.dat	OST_NULL	60	1
+obs61	0.5013	1	results.dat	OST_NULL	61	1
+obs62	0.5377	1	results.dat	OST_NULL	62	1
+obs63	0.5612	1	results.dat	OST_NULL	63	1
+obs64	0.5839	1	results.dat	OST_NULL	64	1
+obs65	0.5880	1	results.dat	OST_NULL	65	1
+obs66	0.5657	1	results.dat	OST_NULL	66	1
+obs67	0.6602	1	results.dat	OST_NULL	67	1
+obs68	0.5410	1	results.dat	OST_NULL	68	1
+obs69	0.5733	1	results.dat	OST_NULL	69	1
+obs70	0.5576	1	results.dat	OST_NULL	70	1
+obs71	0.4619	1	results.dat	OST_NULL	71	1
+obs72	0.5484	1	results.dat	OST_NULL	72	1
+obs73	0.4613	1	results.dat	OST_NULL	73	1
+obs74	0.0000	0.01	results.dat	OST_NULL	74	1
+obs75	0.0000	0.01	results.dat	OST_NULL	75	1
+obs76	0.0000	0.01	results.dat	OST_NULL	76	1
+obs77	0.0000	0.01	results.dat	OST_NULL	77	1
+obs78	0.0000	0.01	results.dat	OST_NULL	78	1
+obs79	0.0003	1	results.dat	OST_NULL	79	1
+obs80	0.0002	1	results.dat	OST_NULL	80	1
+obs81	0.0002	1	results.dat	OST_NULL	81	1
+obs82	0.0014	1	results.dat	OST_NULL	82	1
+obs83	0.0021	1	results.dat	OST_NULL	83	1
+obs84	0.0029	1	results.dat	OST_NULL	84	1
+obs85	0.0033	1	results.dat	OST_NULL	85	1
+obs86	0.0033	1	results.dat	OST_NULL	86	1
+obs87	0.0037	1	results.dat	OST_NULL	87	1
+obs88	0.0041	1	results.dat	OST_NULL	88	1
+obs89	0.0066	1	results.dat	OST_NULL	89	1
+obs90	0.0140	1	results.dat	OST_NULL	90	1
+obs91	0.0116	1	results.dat	OST_NULL	91	1
+obs92	0.0239	1	results.dat	OST_NULL	92	1
+obs93	0.1247	1	results.dat	OST_NULL	93	1
+obs94	0.2256	1	results.dat	OST_NULL	94	1
+obs95	0.3357	1	results.dat	OST_NULL	95	1
+obs96	0.4306	1	results.dat	OST_NULL	96	1
+obs97	0.3463	1	results.dat	OST_NULL	97	1
+obs98	0.3326	1	results.dat	OST_NULL	98	1
+obs99	0.3577	1	results.dat	OST_NULL	99	1
+obs100	0.3738	1	results.dat	OST_NULL	100	1
+obs101	0.3842	1	results.dat	OST_NULL	101	1
+obs102	0.3882	1	results.dat	OST_NULL	102	1
+obs103	0.4010	1	results.dat	OST_NULL	103	1
+obs104	0.4682	1	results.dat	OST_NULL	104	1
+obs105	0.3697	1	results.dat	OST_NULL	105	1
+obs106	0.3953	1	results.dat	OST_NULL	106	1
+obs107	0.4251	1	results.dat	OST_NULL	107	1
+obs108	0.3710	1	results.dat	OST_NULL	108	1
+obs109	0.3829	1	results.dat	OST_NULL	109	1
+obs110	0.3302	1	results.dat	OST_NULL	110	1
+obs111	0.0000	0.01	results.dat	OST_NULL	111	1
+obs112	0.0000	0.01	results.dat	OST_NULL	112	1
+obs113	0.0000	0.01	results.dat	OST_NULL	113	1
+obs114	0.0000	0.01	results.dat	OST_NULL	114	1
+obs115	0.0000	0.01	results.dat	OST_NULL	115	1
+obs116	0.0003	1	results.dat	OST_NULL	116	1
+obs117	0.0003	1	results.dat	OST_NULL	117	1
+obs118	0.0003	1	results.dat	OST_NULL	118	1
+obs119	0.0008	1	results.dat	OST_NULL	119	1
+obs120	0.0011	1	results.dat	OST_NULL	120	1
+obs121	0.0013	1	results.dat	OST_NULL	121	1
+obs122	0.0015	1	results.dat	OST_NULL	122	1
+obs123	0.0015	1	results.dat	OST_NULL	123	1
+obs124	0.0016	1	results.dat	OST_NULL	124	1
+obs125	0.0019	1	results.dat	OST_NULL	125	1
+obs126	0.0005	1	results.dat	OST_NULL	126	1
+obs127	0.0134	1	results.dat	OST_NULL	127	1
+obs128	0.0111	1	results.dat	OST_NULL	128	1
+obs129	0.0009	1	results.dat	OST_NULL	129	1
+obs130	0.0073	1	results.dat	OST_NULL	130	1
+obs131	0.0426	1	results.dat	OST_NULL	131	1
+obs132	0.0626	1	results.dat	OST_NULL	132	1
+obs133	0.0995	1	results.dat	OST_NULL	133	1
+obs134	0.0993	1	results.dat	OST_NULL	134	1
+obs135	0.1351	1	results.dat	OST_NULL	135	1
+obs136	0.1359	1	results.dat	OST_NULL	136	1
+obs137	0.1386	1	results.dat	OST_NULL	137	1
+obs138	0.1506	1	results.dat	OST_NULL	138	1
+obs139	0.1308	1	results.dat	OST_NULL	139	1
+obs140	0.1216	1	results.dat	OST_NULL	140	1
+obs141	0.1273	1	results.dat	OST_NULL	141	1
+obs142	0.1010	1	results.dat	OST_NULL	142	1
+obs143	0.1561	1	results.dat	OST_NULL	143	1
+obs144	0.1514	1	results.dat	OST_NULL	144	1
+obs145	0.0958	1	results.dat	OST_NULL	145	1
+obs146	0.1433	1	results.dat	OST_NULL	146	1
+obs147	0.1118	1	results.dat	OST_NULL	147	1
+obs148	0.0001	1	results.dat	OST_NULL	148	1
+obs149	0.0001	1	results.dat	OST_NULL	149	1
+obs150	0.0000	1	results.dat	OST_NULL	150	1
+obs151	0.0001	1	results.dat	OST_NULL	151	1
+obs152	0.0001	1	results.dat	OST_NULL	152	1
+obs153	0.0003	1	results.dat	OST_NULL	153	1
+obs154	0.0001	1	results.dat	OST_NULL	154	1
+obs155	0.0001	1	results.dat	OST_NULL	155	1
+obs156	0.0005	1	results.dat	OST_NULL	156	1
+obs157	0.0006	1	results.dat	OST_NULL	157	1
+obs158	0.0010	1	results.dat	OST_NULL	158	1
+obs159	0.0007	1	results.dat	OST_NULL	159	1
+obs160	0.0008	1	results.dat	OST_NULL	160	1
+obs161	0.0011	1	results.dat	OST_NULL	161	1
+obs162	0.0010	1	results.dat	OST_NULL	162	1
+obs163	0.0017	1	results.dat	OST_NULL	163	1
+obs164	0.0030	1	results.dat	OST_NULL	164	1
+obs165	0.0028	1	results.dat	OST_NULL	165	1
+obs166	0.0042	1	results.dat	OST_NULL	166	1
+obs167	0.0184	1	results.dat	OST_NULL	167	1
+obs168	0.0326	1	results.dat	OST_NULL	168	1
+obs169	0.0494	1	results.dat	OST_NULL	169	1
+obs170	0.0920	1	results.dat	OST_NULL	170	1
+obs171	0.0928	1	results.dat	OST_NULL	171	1
+obs172	0.0931	1	results.dat	OST_NULL	172	1
+obs173	0.1000	1	results.dat	OST_NULL	173	1
+obs174	0.1004	1	results.dat	OST_NULL	174	1
+obs175	0.1025	1	results.dat	OST_NULL	175	1
+obs176	0.0981	1	results.dat	OST_NULL	176	1
+obs177	0.0932	1	results.dat	OST_NULL	177	1
+obs178	0.1027	1	results.dat	OST_NULL	178	1
+obs179	0.0956	1	results.dat	OST_NULL	179	1
+obs180	0.0946	1	results.dat	OST_NULL	180	1
+obs181	0.1025	1	results.dat	OST_NULL	181	1
+obs182	0.0895	1	results.dat	OST_NULL	182	1
+obs183	0.0887	1	results.dat	OST_NULL	183	1
+obs184	0.0888	1	results.dat	OST_NULL	184	1
+obs185	0.0001	0.01	results.dat	OST_NULL	185	1
+obs186	0.0000	0.01	results.dat	OST_NULL	186	1
+obs187	0.0000	0.01	results.dat	OST_NULL	187	1
+obs188	0.0000	0.01	results.dat	OST_NULL	188	1
+obs189	0.0001	0.01	results.dat	OST_NULL	189	1
+obs190	0.0000	0.01	results.dat	OST_NULL	190	1
+obs191	0.0000	0.01	results.dat	OST_NULL	191	1
+obs192	0.0000	0.01	results.dat	OST_NULL	192	1
+obs193	0.0000	0.01	results.dat	OST_NULL	193	1
+obs194	0.0000	0.01	results.dat	OST_NULL	194	1
+obs195	0.0000	0.01	results.dat	OST_NULL	195	1
+obs196	0.0000	0.01	results.dat	OST_NULL	196	1
+obs197	0.0000	0.01	results.dat	OST_NULL	197	1
+obs198	0.0000	0.01	results.dat	OST_NULL	198	1
+obs199	0.0000	0.01	results.dat	OST_NULL	199	1
+obs200	0.0001	1	results.dat	OST_NULL	200	1
+obs201	0.0004	1	results.dat	OST_NULL	201	1
+obs202	0.0003	1	results.dat	OST_NULL	202	1
+obs203	0.0004	1	results.dat	OST_NULL	203	1
+obs204	0.0045	1	results.dat	OST_NULL	204	1
+obs205	0.0089	1	results.dat	OST_NULL	205	1
+obs206	0.0162	1	results.dat	OST_NULL	206	1
+obs207	0.0378	1	results.dat	OST_NULL	207	1
+obs208	0.0418	1	results.dat	OST_NULL	208	1
+obs209	0.0481	1	results.dat	OST_NULL	209	1
+obs210	0.0511	1	results.dat	OST_NULL	210	1
+obs211	0.0508	1	results.dat	OST_NULL	211	1
+obs212	0.0522	1	results.dat	OST_NULL	212	1
+obs213	0.0514	1	results.dat	OST_NULL	213	1
+obs214	0.0476	1	results.dat	OST_NULL	214	1
+obs215	0.0499	1	results.dat	OST_NULL	215	1
+obs216	0.0211	1	results.dat	OST_NULL	216	1
+obs217	0.0479	1	results.dat	OST_NULL	217	1
+obs218	0.0463	1	results.dat	OST_NULL	218	1
+obs219	0.0400	1	results.dat	OST_NULL	219	1
+obs220	0.0423	1	results.dat	OST_NULL	220	1
+obs221	0.0431	1	results.dat	OST_NULL	221	1
+obs222	0.0000	0.01	results.dat	OST_NULL	222	1
+obs223	0.0000	0.01	results.dat	OST_NULL	223	1
+obs224	0.0000	0.01	results.dat	OST_NULL	224	1
+obs225	0.0000	0.01	results.dat	OST_NULL	225	1
+obs226	0.0000	0.01	results.dat	OST_NULL	226	1
+obs227	0.0002	0.01	results.dat	OST_NULL	227	1
+obs228	0.0000	0.01	results.dat	OST_NULL	228	1
+obs229	0.0000	0.01	results.dat	OST_NULL	229	1
+obs230	0.0000	0.01	results.dat	OST_NULL	230	1
+obs231	0.0000	0.01	results.dat	OST_NULL	231	1
+obs232	0.0000	0.01	results.dat	OST_NULL	232	1
+obs233	0.0000	0.01	results.dat	OST_NULL	233	1
+obs234	0.0000	0.01	results.dat	OST_NULL	234	1
+obs235	0.0000	0.01	results.dat	OST_NULL	235	1
+obs236	0.0000	0.01	results.dat	OST_NULL	236	1
+obs237	0.0003	1	results.dat	OST_NULL	237	1
+obs238	0.0005	1	results.dat	OST_NULL	238	1
+obs239	0.0003	1	results.dat	OST_NULL	239	1
+obs240	0.0003	1	results.dat	OST_NULL	240	1
+obs241	0.0003	1	results.dat	OST_NULL	241	1
+obs242	0.0013	1	results.dat	OST_NULL	242	1
+obs243	0.0012	1	results.dat	OST_NULL	243	1
+obs244	0.0012	1	results.dat	OST_NULL	244	1
+obs245	0.0015	1	results.dat	OST_NULL	245	1
+obs246	0.0013	1	results.dat	OST_NULL	246	1
+obs247	0.0123	1	results.dat	OST_NULL	247	1
+obs248	0.0198	1	results.dat	OST_NULL	248	1
+obs249	0.0186	1	results.dat	OST_NULL	249	1
+obs250	0.0137	1	results.dat	OST_NULL	250	1
+obs251	0.0106	1	results.dat	OST_NULL	251	1
+obs252	0.0093	1	results.dat	OST_NULL	252	1
+obs253	0.0166	1	results.dat	OST_NULL	253	1
+obs254	0.0199	1	results.dat	OST_NULL	254	1
+obs255	0.0225	1	results.dat	OST_NULL	255	1
+obs256	0.0201	1	results.dat	OST_NULL	256	1
+obs257	0.0184	1	results.dat	OST_NULL	257	1
+obs258	0.0305	1	results.dat	OST_NULL	258	1
+EndObservations
+
+# Configuration for Asynchronous Parallel Particle Swarm Optimization
+BeginAPPSO
+SwarmSize	32
+NumGenerations	50
+ConstrictionFactor	1
+CognitiveParam	2
+SocialParam	2
+InertiaWeight	1.2
+InertiaReductionRate	0.10
+EndAPPSO
+
+# Configuration for Particle Swarm Optimization
+BeginParticleSwarm
+SwarmSize	320
+NumGenerations	100
+ConstrictionFactor	1
+CognitiveParam	2
+SocialParam	2
+InertiaWeight	1.2
+InertiaReductionRate	0.10
+InitPopulationMethod	LHS
+ConvergenceVal	1.00e-4
+EndParticleSwarm
+
+# Configuration for Gauss-Marquardt-Levenberg
+BeginLevMar
+InitialLambda   10
+LambdaScaleFactor   1.10
+MoveLimit   0.15
+AlgorithmConvergenceValue   1.0e-4
+LambdaPhiRatio  0.30
+LambdaRelReduction  0.01
+MaxLambdas  10
+MaxIterations   30
+EndLevMar
+
+BeginMathAndStats
+DiffType	forward
+DiffRelIncrement	0.001
+AllStats
+EndMathAndStats
+
