@@ -142,6 +142,133 @@ class PhysicalParams:
             "bc": np.ones_like(self.C_0),
         }
 
+    def _repr_html_(self):
+        kads = "<br>".join(map(lambda x: f"{x:.3E}", self.k_ads))
+        kdes = "<br>".join(map(lambda x: f"{x:.3E}", self.k_des))
+
+        html_table = (
+            """
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>PhysicalParameters - cowerc_adsorption.py</title>
+        <style>
+        body {
+            font-family: monospace;
+        }
+
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc8;
+            width: 600px;
+        }
+
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #ddd7;
+            align-items: center;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-column {
+            display: flex;
+            flex: 1;
+            border-left: 1px solid #ddd7;
+            padding: 10px;
+        }
+
+        .table-column:first-child {
+            border-left: none;
+        }
+
+        .header-row .table-column {
+            font-weight: bold;
+            background-color: #5169;
+        }
+
+        abbr {
+            text-decoration: none;
+        }
+
+        .sub-table-container {
+            display: flex;
+            margin-top: 2px;
+        }
+
+        .sub-table-column {
+            flex: 1;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub-table-column:last-child {
+            border-right: none;
+        }
+        </style>
+        </head>
+        """
+            f"""
+        <body>
+
+        <div class="table-container">
+        <!-- Header Row -->
+        <div class="table-row header-row">
+            <div class="table-column"><code>PhysicalParams</code> | {len(self.k_ads)} components</div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="table-row">
+            <div class="table-column">
+                <abbr title="Length"><em>L</em> = <code>{self.L:.3f}</code></abbr>
+            </div>
+            <div class="table-column">
+                <abbr title="Pore velocity"><em>v</em> = <code>{self.v:.3f}</code></abbr>
+            </div>
+            <div class="table-column">
+                <abbr title="Porosity"><em>n</em> = <code>{self.n:.3f}</code></abbr>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="table-row">
+            <div class="table-column">
+                <abbr title="Adsorption capacity"><em>s<sub>m</sub></em> = <code>1&times;10<sup>5.4</sup></code></abbr>
+            </div>
+            <div class="table-column">
+                <div class="sub-table-container">
+                    <div class="sub-table-column">
+                        <abbr title="Adsorption rates"><em>k<sub>ads</sub></em> = </abbr>
+                    </div>
+                    <div class="sub-table-column">
+                        <code>{kads}</code>
+                    </div> 
+                </div>
+            </div>
+            <div class="table-column">
+                <div class="sub-table-container">
+                    <div class="sub-table-column">
+                        <abbr title="Desorption rates"><em>k<sub>des</sub></em> = </abbr>
+                    </div>
+                    <div class="sub-table-column">
+                        <code>{kdes}</code>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        </div>
+        </body>
+        </html>
+        """
+        )
+
+        return html_table
+
 
 @jit(cache=True)
 def _advance_timestep(previous_step: tuple[NDArray, NDArray], next_step: tuple[NDArray, NDArray], *args):
