@@ -161,7 +161,7 @@ class PhysicalParams:
             display: flex;
             flex-direction: column;
             border: 1px solid #ccc8;
-            width: 600px;
+            width: max(600px, 80vw);
         }
 
         .table-row {
@@ -200,7 +200,6 @@ class PhysicalParams:
         }
 
         .sub-table-column {
-            flex: 1;
             padding: 4px;
             display: flex;
             align-items: center;
@@ -238,7 +237,7 @@ class PhysicalParams:
         <!-- Row 2 -->
         <div class="table-row">
             <div class="table-column">
-                <abbr title="Adsorption capacity"><em>s<sub>m</sub></em> = <code>1&times;10<sup>5.4</sup></code></abbr>
+                <abbr title="Adsorption capacity"><em>s<sub>m</sub></em> = <code>{self.sm:.3E}</code></abbr>
             </div>
             <div class="table-column">
                 <div class="sub-table-container">
