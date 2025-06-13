@@ -1,0 +1,2682 @@
+Starting up MPI required 0.247581 seconds
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759837
+
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759823
+
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759824
+
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759827
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759829
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759831
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759832
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759834
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759836
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759838
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759833
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759826
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759830
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759835
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759825
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+--------------------------------------------------------------------------
+ OSTRICH version 17.12.19 (Built Dec 19 2017 @ 12:27:16)
+
+ A computer program for model-independent calibration and optimization.
+
+ Author             L. Shawn Matott
+ Copyright (C) 2007 L. Shawn Matott
+
+ This program is free software; you can redistribute 
+ it and/or modify it under the terms of the GNU  
+ General Public License as published by the Free 
+ Software Foundation; either version 2 of the 
+ License, or(at your option) any later version. 
+
+ This program is distributed in the hope that it will 
+ be useful, but WITHOUT ANY WARRANTY; without even 
+ the implied warranty of MERCHANTABILITY or FITNESS 
+ FOR A PARTICULAR PURPOSE. See the GNU General Public 
+ License for more details. 
+
+ You should have received a copy of the GNU General 
+ Public License along with this program; if not, 
+ write to the Free Software Foundation, Inc., 59 
+ Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+--------------------------------------------------------------------------
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #1)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759828
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+0     2.489336E+00  4.980000E+00  1.300000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.480000E+00  1.510000E+00  -7.400000E-01  -1.520000E+00  -1.960000E+00  -2.000000E+00  -2.520000E+00  -2.600000E+00  1.000000E+01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---   5---   6---
+Operation is complete
+
+1     4.143465E-01  5.361883E+00  1.536470E+00  1.548379E+00  1.425574E+00  1.447577E+00  1.476001E+00  1.582767E+00  -9.893879E-01  -1.622931E+00  -2.146833E+00  -2.226028E+00  -2.568766E+00  -2.663643E+00  7.513148E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---   5---   6---   7---   8---
+Operation is complete
+
+2     2.187353E-01  5.862876E+00  1.590509E+00  1.285480E+00  1.191863E+00  1.156644E+00  1.340321E+00  1.580830E+00  -1.014411E+00  -1.899514E+00  -2.411733E+00  -2.583405E+00  -2.761781E+00  -2.666453E+00  4.240976E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---
+Operation is complete
+
+3     2.155387E-01  5.906407E+00  1.621870E+00  1.252204E+00  1.203053E+00  1.183456E+00  1.319791E+00  1.586492E+00  -9.815331E-01  -1.947809E+00  -2.404432E+00  -2.560068E+00  -2.796386E+00  -2.657146E+00  3.855433E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+4     2.152556E-01  5.989977E+00  1.672639E+00  1.240160E+00  1.199761E+00  1.172545E+00  1.307147E+00  1.599541E+00  -9.249415E-01  -1.962056E+00  -2.406064E+00  -2.569741E+00  -2.817371E+00  -2.633392E+00  3.504939E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+5     2.151735E-01  6.065784E+00  1.695911E+00  1.251193E+00  1.204927E+00  1.185761E+00  1.314405E+00  1.615005E+00  -8.998137E-01  -1.948874E+00  -2.400460E+00  -2.555237E+00  -2.803933E+00  -2.607039E+00  3.186308E+00
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759825
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759837
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759834
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759835
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759836
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759824
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759832
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759823
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759829
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759826
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759828
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759833
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759830
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759838
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759827
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #2)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759831
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+0     3.032042E+01  9.325094E+00  -3.916204E+00  -3.551089E+00  -3.013182E+00  -3.329307E+00  -6.397541E-01  -3.723586E+00  1.392328E+00  4.032912E-01  -4.973721E+00  9.711130E-01  7.217935E-01  -6.543853E-01  1.000000E+01
+0     3.031315E+01  8.367169E+00  -1.965331E+00  -3.833878E+00  -3.894522E+00  -3.357631E+00  -3.288268E+00  -3.362724E+00  -3.667330E+00  1.601183E+00  -1.321195E+00  -3.540972E+00  1.071825E+00  5.332095E-01  1.000000E+01
+0     3.031747E+01  2.020947E-01  -2.037233E+00  -3.275534E+00  -3.979666E+00  -3.908655E+00  -3.952683E+00  -3.139605E+00  -4.050749E+00  1.589530E+00  -3.801079E+00  -4.854659E+00  1.823236E+00  -4.933435E+00  1.000000E+01
+0     3.032229E+01  2.333845E+00  -3.948175E+00  -2.784124E+00  -3.283299E+00  -3.758203E+00  -3.220939E+00  -2.010496E+00  -2.812161E+00  1.784608E+00  -4.119441E+00  1.694121E+00  3.352038E-01  1.400648E+00  1.000000E+01
+0     3.027586E+01  9.870705E+00  -3.308887E+00  -1.692901E+00  -3.955462E+00  -3.462796E+00  -3.824049E+00  -3.421280E+00  -4.302681E-02  -4.202619E+00  -4.178419E+00  -4.430103E+00  -3.564471E+00  1.545925E+00  1.000000E+01
+0     3.031941E+01  3.383836E+00  -3.811508E+00  -2.853200E+00  -3.243566E+00  -3.419249E+00  -2.602677E+00  -3.792886E+00  -3.746470E-01  -4.812804E+00  1.704452E+00  -4.640552E+00  9.323409E-01  1.337749E+00  1.000000E+01
+0     3.032173E+01  1.125489E-01  -2.534434E+00  -3.932773E+00  -3.462235E+00  -3.621884E+00  -3.274307E+00  -2.911207E+00  -4.541161E+00  -2.679551E+00  1.266117E+00  -2.489971E+00  1.144104E+00  1.933283E+00  1.000000E+01
+0     3.031962E+01  8.024055E+00  -3.850141E+00  -3.293377E+00  -2.927430E+00  -2.933463E+00  -3.896219E+00  -3.115598E+00  -4.832829E+00  1.558309E+00  -3.516007E+00  1.421480E+00  -3.254825E+00  9.572244E-01  1.000000E+01
+0     3.032449E+01  9.466530E-01  -3.709715E+00  -2.058246E+00  -3.637891E+00  -3.004308E+00  -3.859034E+00  -1.423719E+00  7.967410E-02  1.609548E+00  -6.915062E-01  1.617455E+00  1.241400E+00  1.788578E+00  1.000000E+01
+0     3.033866E+01  1.521217E+00  -9.321692E-01  -3.791760E+00  -3.569006E+00  -3.499192E+00  -3.786116E+00  1.966147E+00  -4.440745E+00  1.493940E+00  1.946366E+00  -4.789363E+00  1.566438E+00  -4.858079E-01  1.000000E+01
+0     3.032257E+01  9.941109E+00  -2.916013E+00  -3.972674E+00  -8.558512E-01  -3.629078E+00  -1.902815E+00  -8.241053E-01  -2.121781E+00  1.057466E+00  1.445500E+00  -4.641939E+00  1.670470E+00  1.521220E+00  1.000000E+01
+0     2.154678E-01  9.091194E+00  -3.700131E+00  -2.328928E+00  -3.330592E+00  -3.556440E+00  2.721091E+00  -3.340874E+00  -3.333424E+00  1.805545E+00  9.749468E-02  -2.760288E+00  1.970804E+00  1.489444E+00  1.000000E+01
+0     3.031046E+01  9.573020E+00  -1.377172E+00  -2.751512E+00  -3.781342E+00  -3.866614E+00  -2.689340E+00  -3.302024E+00  1.851642E+00  -4.776957E+00  1.367364E+00  1.253499E+00  -3.471014E+00  1.817211E+00  1.000000E+01
+0     2.156478E-01  9.409096E+00  2.712833E+00  -2.753704E+00  -3.944167E+00  -3.261108E+00  -3.649660E+00  -2.282983E+00  -4.778195E+00  -4.236721E+00  -3.313964E+00  6.476818E-01  1.024971E-01  1.672554E+00  1.000000E+01
+0     3.032288E+01  1.526300E-01  -3.666522E+00  -3.957200E+00  -3.440862E+00  -3.767111E+00  -1.366022E+00  -3.022740E+00  -2.404426E+00  -4.608083E+00  -2.509649E+00  -4.311739E+00  5.490783E-01  1.553729E+00  1.000000E+01
+0     3.030974E+01  9.101238E+00  -2.717168E+00  -3.763174E+00  -2.767516E+00  -2.628848E+00  -3.544040E+00  -2.450209E+00  -4.651535E+00  -3.968835E+00  1.316679E+00  -4.092220E+00  -4.263118E+00  8.092774E-01  1.000000E+01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+1     3.023273E+01  1.702095E+00  -9.872328E-01  -3.637767E+00  -2.929666E+00  -2.858655E+00  -3.976341E+00  -2.089605E+00  -4.525374E+00  1.794765E+00  -4.851079E+00  -4.927330E+00  1.911618E+00  -4.966718E+00  9.090909E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---   4+++
+Operation is complete
+
+2     2.964478E+01  3.202095E+00  6.276721E-02  -3.818883E+00  -1.879666E+00  -1.808655E+00  -3.988171E+00  -1.039605E+00  -3.475374E+00  1.897383E+00  -3.801079E+00  -3.877330E+00  1.955809E+00  -3.916718E+00  8.264463E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---
+Operation is complete
+
+3     2.854295E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  2.913448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  6.830135E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+4     2.853258E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  2.983448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  6.209213E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+5     2.852210E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.053448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  5.644739E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+6     2.851151E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.123448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  5.131581E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+7     2.850081E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.193448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  4.665074E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+8     2.849000E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.263448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  4.240976E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+9     2.847909E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.333448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  3.855433E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+10    2.846806E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.403448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  3.504939E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+11    2.845692E+01  6.202095E+00  4.306477E-01  -3.954721E+00  2.203338E-01  3.473448E-01  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -1.701079E+00  -1.777330E+00  1.988952E+00  -1.816718E+00  3.186308E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+12    2.843816E+01  7.702095E+00  -6.193523E-01  -3.954721E+00  -7.329789E-01  -3.927390E-01  -3.997043E+00  1.039477E-02  -2.425374E+00  1.974346E+00  -2.751079E+00  -2.827330E+00  1.988952E+00  -2.866718E+00  2.896644E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---   4+++
+Operation is complete
+
+13    1.985293E+01  9.202095E+00  4.306477E-01  -3.954721E+00  3.170211E-01  6.572610E-01  -3.997043E+00  -1.039605E+00  -1.375374E+00  1.974346E+00  -3.801079E+00  -3.877330E+00  1.988952E+00  -3.916718E+00  2.633313E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4---
+Operation is complete
+
+14    1.672962E+01  7.702095E+00  -6.193523E-01  -3.954721E+00  1.061591E+00  1.029958E+00  -3.997043E+00  1.039477E-02  -2.425374E+00  1.974346E+00  -2.751079E+00  -2.827330E+00  1.988952E+00  -4.966718E+00  2.393920E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++   4+++
+Operation is complete
+
+15    1.365339E+01  9.202095E+00  4.306477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  2.633313E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+16    1.364685E+01  9.202095E+00  4.376477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  2.393920E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+17    1.364022E+01  9.202095E+00  4.446477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  2.176291E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+18    1.363351E+01  9.202095E+00  4.516477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.978447E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+19    1.362671E+01  9.202095E+00  4.586477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.798588E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+20    1.361983E+01  9.202095E+00  4.656477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.635080E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+21    1.361287E+01  9.202095E+00  4.726477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.486436E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+22    1.360583E+01  9.202095E+00  4.796477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.351306E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+23    1.359870E+01  9.202095E+00  4.866477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.228460E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+24    1.359149E+01  9.202095E+00  4.936477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.116782E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+25    1.358419E+01  9.202095E+00  5.006477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  1.015256E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+26    1.357681E+01  9.202095E+00  5.076477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  9.229600E-01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+27    1.356934E+01  9.202095E+00  5.146477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  8.390545E-01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+28    1.356180E+01  9.202095E+00  5.216477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  7.627768E-01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+29    1.355417E+01  9.202095E+00  5.286477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  6.934335E-01
+
+Adjusting Lambda Parameter (max of 10 evals)
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759824
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759825
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759835
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759831
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759832
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759836
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759829
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759828
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759826
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759837
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759834
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759830
+
+   1...   2---   3+++
+Operation is complete
+
+30    1.354645E+01  9.202095E+00  5.356477E-01  -3.954721E+00  1.159263E+00  1.184387E+00  -3.997043E+00  1.060395E+00  -1.375374E+00  1.974346E+00  -2.403326E+00  -2.521499E+00  1.988952E+00  -3.916718E+00  6.303941E-01
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759823
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759833
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759838
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #3)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759827
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+0     1.355354E+01  9.711717E+00  -3.296766E+00  -3.562036E+00  -3.282573E+00  -3.854427E+00  -3.164500E+00  2.962881E+00  -2.197009E-01  -4.328010E+00  1.218310E+00  -3.913638E+00  -4.492605E+00  -3.589666E+00  1.000000E+01
+0     3.032449E+01  8.258242E-03  -3.593864E+00  -3.976172E+00  -2.606926E+00  -3.405767E+00  1.234791E+00  -3.153108E+00  -1.426059E+00  -3.213792E+00  -4.071060E+00  1.960275E+00  -3.233683E+00  -4.642090E+00  1.000000E+01
+0     3.149319E+01  9.652191E+00  2.132637E+00  -3.620577E+00  -3.919571E+00  -3.184888E+00  -2.473256E+00  -3.936279E+00  -1.151529E+00  -3.186735E-01  -7.869280E-01  2.188208E-01  -9.618760E-03  1.862462E+00  1.000000E+01
+0     3.032180E+01  9.955593E-01  -2.545592E+00  -3.287507E+00  -3.207540E+00  2.397325E-01  -3.478346E+00  -3.883135E+00  1.035985E+00  -4.806248E+00  1.623318E+00  4.535505E-01  -3.617670E+00  1.736708E+00  1.000000E+01
+0     2.916414E+01  9.226577E+00  7.091900E-01  -2.758440E+00  4.390770E-02  -3.181984E+00  -3.723623E+00  -3.268954E+00  -1.790659E+00  1.983267E+00  9.631197E-02  1.878461E+00  1.951767E+00  -4.593944E+00  1.000000E+01
+0     3.032449E+01  2.653177E-01  1.346778E-01  -3.168332E+00  2.094765E+00  -2.167395E+00  -3.930079E+00  -3.608659E+00  1.974928E+00  -4.314433E+00  -4.667682E+00  -3.665337E+00  -4.912498E+00  1.453944E+00  1.000000E+01
+0     1.355820E+01  8.237073E+00  -3.829153E+00  2.010671E+00  2.659458E+00  -3.489612E+00  -3.615965E+00  3.552726E-01  -4.593423E+00  -4.892846E+00  1.924207E+00  1.152492E+00  1.997465E+00  1.227892E+00  1.000000E+01
+0     2.684523E+01  8.188116E+00  -3.275585E+00  -3.927360E+00  9.272475E-01  -3.607606E+00  -3.929240E+00  -3.326417E+00  -4.576407E+00  -2.540460E+00  -3.790516E+00  -1.640938E+00  1.599694E+00  -4.953562E+00  1.000000E+01
+0     3.032195E+01  8.530355E+00  -3.756987E+00  -2.587759E+00  -3.489011E+00  -3.943132E+00  -3.831642E+00  1.184169E+00  -1.516432E+00  1.818661E+00  -3.934824E+00  -2.898457E+00  -4.935395E+00  1.113626E+00  1.000000E+01
+0     1.355417E+01  8.761633E-01  -1.625780E+00  2.654838E+00  -3.526088E+00  -3.544137E+00  -1.032835E+00  -3.943029E+00  1.670050E+00  -4.038587E+00  1.864190E+00  1.649168E+00  1.935242E+00  -4.733004E+00  1.000000E+01
+0     3.032255E+01  5.474955E-01  -3.418572E+00  -3.320112E+00  -2.997132E+00  -3.484131E+00  -2.903733E+00  1.979525E+00  -4.521217E+00  -3.679525E+00  -1.237404E+00  -3.585503E+00  1.157070E+00  1.905557E+00  1.000000E+01
+0     3.032499E+01  5.366678E-02  -3.619050E+00  -2.098826E+00  -3.952181E+00  -2.828271E+00  -3.650087E+00  -6.788350E-01  1.675910E+00  -1.777807E+00  5.500683E-01  1.034410E+00  1.462685E+00  -3.307842E+00  1.000000E+01
+0     3.032449E+01  8.034151E-02  -3.036447E+00  -1.760262E+00  -3.036825E+00  -3.234794E+00  2.186694E+00  -3.829786E+00  1.367596E+00  9.707243E-01  6.183098E-01  1.834665E+00  5.265380E-01  1.459841E+00  1.000000E+01
+0     3.032449E+01  6.853268E-01  -2.886711E+00  8.056231E-01  -2.413019E+00  7.226533E-01  -3.775882E+00  -3.878788E+00  -4.325614E+00  -3.950450E+00  -4.358356E+00  1.634229E+00  1.890849E+00  4.955739E-01  1.000000E+01
+0     3.032448E+01  2.867454E-01  -3.351101E+00  -2.655297E+00  1.117673E+00  -2.737987E+00  -3.057142E+00  -3.551906E+00  -4.179636E+00  1.614069E+00  -1.177499E+00  1.911557E+00  -4.701433E+00  -4.127336E-01  1.000000E+01
+0     3.029909E+01  5.814741E-01  -3.631721E+00  -3.698962E+00  -3.551115E+00  -3.910455E+00  -1.830282E+00  -3.537765E+00  -3.729131E+00  -3.127125E+00  5.824023E-01  -4.076113E+00  -3.128792E+00  -1.096923E+00  1.000000E+01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+1     3.032449E+01  2.653177E-01  1.416778E-01  -3.168332E+00  2.094765E+00  -2.167395E+00  -3.930079E+00  -3.608659E+00  1.974928E+00  -4.314433E+00  -4.667682E+00  -3.665337E+00  -4.912498E+00  1.453944E+00  9.090909E+00
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759827
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759838
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759833
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759837
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759835
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759824
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759826
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759834
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759831
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759830
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759832
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759828
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759836
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759825
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759829
+
+Ostrich Setup
+Model                  : ./ostrich_model.py > OstExeOut.txt 2>&1
+Algorithm              : GML-MS (multi-start #4)
+Objective Function     : WSSE
+Number of Parameters   : 13
+Number of Tied Params  : 0
+Number of Observations : 60
+Seed for Random Nums.  : 1749759823
+
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+Ostrich Run Record
+iter  obj. function  <tot_sm>      <kads_1>      <kads_2>      <kads_3>      <kads_4>      <kads_5>      <kads_6>      <kdes_1>      <kdes_2>      <kdes_3>      <kdes_4>      <kdes_5>      <kdes_6>      lambda
+0     3.032385E+01  1.280988E-01  -3.943740E+00  2.030861E+00  -4.255119E-01  8.940602E-01  -2.500979E+00  -3.074366E+00  -5.373339E-01  1.869690E+00  -3.563836E+00  1.833989E+00  6.304852E-01  1.738401E+00  1.000000E+01
+0     3.032449E+01  9.873840E+00  -3.211069E+00  -2.427116E+00  -3.129753E+00  -3.692920E+00  2.826526E+00  -3.658147E+00  -8.472091E-01  -5.464309E-01  -4.556855E+00  1.241078E+00  1.419606E-01  -4.528928E-01  1.000000E+01
+0     3.032449E+01  3.475619E-01  -3.992648E+00  3.396105E-01  1.643427E+00  2.472219E+00  -3.948956E+00  -2.221117E+00  1.355972E+00  -4.072908E+00  1.226762E+00  1.887445E+00  5.041729E-01  1.627317E+00  1.000000E+01
+0     3.419996E+01  9.096541E+00  2.019738E+00  -1.294163E+00  -2.575644E+00  2.522548E-01  -3.831893E+00  -3.606582E+00  -4.621002E+00  1.896003E+00  1.956556E+00  -3.356034E+00  -2.009059E+00  1.454246E+00  1.000000E+01
+0     2.078276E+01  9.954088E+00  -1.389747E+00  -2.995610E+00  -2.690750E+00  -2.578534E+00  1.295505E+00  -3.793445E+00  9.994855E-01  3.045973E-01  1.219771E+00  -3.403954E+00  -3.829160E+00  1.861028E+00  1.000000E+01
+0     3.824848E+01  9.416781E+00  1.234855E+00  -3.040699E+00  -2.926855E+00  -3.907964E+00  1.623550E+00  -3.717897E+00  -4.707385E+00  -4.741806E+00  -9.590992E-01  -1.290506E+00  -1.560269E-01  1.493534E+00  1.000000E+01
+0     3.032449E+01  1.241452E+00  -1.989761E+00  -2.636001E+00  2.537010E+00  -2.836577E+00  -3.137428E+00  -2.012098E+00  -4.617709E+00  1.027850E+00  1.369153E-02  1.937520E+00  1.500388E+00  -4.979343E+00  1.000000E+01
+0     3.032449E+01  8.866991E+00  2.759344E+00  -3.508826E+00  -3.328563E+00  -2.293912E+00  -3.822135E+00  -3.514290E+00  -4.068576E+00  -3.898564E+00  -1.156258E+00  1.627220E+00  -4.963668E+00  -2.059862E+00  1.000000E+01
+0     8.743880E+04  9.901860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  1.000000E+01
+0     3.032195E+01  9.023383E+00  -3.359223E+00  2.579058E+00  -3.337563E+00  2.319590E+00  -3.940438E+00  -3.917497E+00  -3.648042E+00  -4.985432E+00  -4.470420E+00  -8.831683E-01  1.303434E+00  1.127698E+00  1.000000E+01
+0     3.032269E+01  9.184359E-03  -1.710012E+00  -1.635677E+00  -3.701270E+00  -3.215340E+00  -2.935410E+00  1.658968E+00  1.644198E+00  1.947668E+00  1.954743E-01  -4.186574E+00  1.434340E+00  1.998881E+00  1.000000E+01
+0     3.032449E+01  9.835576E+00  -3.727442E+00  -2.314416E+00  -2.488352E+00  2.869881E+00  2.354166E+00  -3.771363E+00  -3.031765E-01  -3.926799E+00  1.870289E+00  -4.578070E+00  1.646895E+00  2.962290E-01  1.000000E+01
+0     2.908380E+01  9.850650E+00  -2.707384E+00  -3.554878E+00  -2.265603E+00  -5.587274E-01  -3.815350E+00  -7.343023E-01  -5.126353E-01  -2.014257E+00  -4.849086E+00  -4.992673E+00  1.269382E+00  1.995214E+00  1.000000E+01
+0     3.032449E+01  1.338473E+00  2.926428E+00  -1.958003E+00  -3.415696E+00  7.158503E-02  -3.002082E+00  -3.485414E+00  -3.386260E+00  -4.692915E+00  1.080515E+00  -1.373229E+00  1.192406E+00  1.600906E+00  1.000000E+01
+0     2.555225E+01  9.785135E+00  -2.767366E+00  -3.716843E+00  -3.664699E+00  -2.233338E+00  -2.429459E+00  1.948053E+00  4.775174E-01  -4.937119E+00  1.798837E+00  2.957068E-01  1.418234E+00  -4.396803E+00  1.000000E+01
+0     3.032449E+01  9.414770E+00  2.374226E+00  -1.981327E+00  -3.709852E+00  -3.353845E+00  -3.755646E+00  2.642463E+00  -4.527015E+00  -4.961160E+00  1.757330E+00  -3.071018E+00  -4.028272E+00  1.970465E-01  1.000000E+01
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+1     8.356245E+04  9.911860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  9.090909E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+2     7.985380E+04  9.921860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  8.264463E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+3     7.630592E+04  9.931860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  7.513148E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+4     7.291214E+04  9.941860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  6.830135E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+5     6.966604E+04  9.951860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  6.209213E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+6     6.656145E+04  9.961860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  5.644739E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+7     6.359243E+04  9.971860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  5.131581E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+8     6.075328E+04  9.981860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  4.665074E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+9     5.803850E+04  9.991860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.881220E+00  4.335522E-01  -5.100114E-01  4.240976E+00
+
+Adjusting Lambda Parameter (max of 10 evals)
+   1...   2---   3+++
+Operation is complete
+
+10    5.803850E+04  9.991860E+00  -3.772847E+00  2.365722E+00  -3.227868E+00  4.640184E-01  -2.834605E+00  -3.712310E+00  5.798869E-01  -3.513970E+00  1.334126E+00  1.888220E+00  4.335522E-01  -5.100114E-01  3.855433E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.156478E-01
+<tot_sm>           : 9.202095E+00
+<kads_1>           : 5.286477E-01
+<kads_2>           : -3.954721E+00
+<kads_3>           : 1.159263E+00
+<kads_4>           : 1.184387E+00
+<kads_5>           : -3.997043E+00
+<kads_6>           : 1.060395E+00
+<kdes_1>           : -1.375374E+00
+<kdes_2>           : 1.974346E+00
+<kdes_3>           : -2.403326E+00
+<kdes_4>           : -2.521499E+00
+<kdes_5>           : 1.988952E+00
+<kdes_6>           : -3.916718E+00
+
+Optimal Parameter Set
+Objective Function : 2.154678E-01
+<tot_sm>           : 9.202095E+00
+<kads_1>           : 5.286477E-01
+<kads_2>           : -3.954721E+00
+<kads_3>           : 1.159263E+00
+<kads_4>           : 1.184387E+00
+<kads_5>           : -3.997043E+00
+<kads_6>           : 1.060395E+00
+<kdes_1>           : -1.375374E+00
+<kdes_2>           : 1.974346E+00
+<kdes_3>           : -2.403326E+00
+<kdes_4>           : -2.521499E+00
+<kdes_5>           : 1.988952E+00
+<kdes_6>           : -3.916718E+00
+
+Optimal Parameter Set
+Objective Function : 2.151735E-01
+<tot_sm>           : 6.065784E+00
+<kads_1>           : 1.695911E+00
+<kads_2>           : 1.251193E+00
+<kads_3>           : 1.204927E+00
+<kads_4>           : 1.185761E+00
+<kads_5>           : 1.314405E+00
+<kads_6>           : 1.615005E+00
+<kdes_1>           : -8.998137E-01
+<kdes_2>           : -1.948874E+00
+<kdes_3>           : -2.400460E+00
+<kdes_4>           : -2.555237E+00
+<kdes_5>           : -2.803933E+00
+<kdes_6>           : -2.607039E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Optimal Parameter Set
+Objective Function : 2.489336E+00
+<tot_sm>           : 5.989977E+00
+<kads_1>           : 1.672639E+00
+<kads_2>           : 1.240160E+00
+<kads_3>           : 1.199761E+00
+<kads_4>           : 1.172545E+00
+<kads_5>           : 1.307147E+00
+<kads_6>           : 1.599541E+00
+<kdes_1>           : -9.249415E-01
+<kdes_2>           : -1.962056E+00
+<kdes_3>           : -2.406064E+00
+<kdes_4>           : -2.569741E+00
+<kdes_5>           : -2.817371E+00
+<kdes_6>           : -2.633392E+00
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 5 (all multi-starts)
+Avg. Total Evals  : 1 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 5
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 0
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 5 (all multi-starts)
+Avg. Total Evals  : 1 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 5
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 0
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Statistical Output
+
+Untransformed WSSE : 2.151735E-01
+
+Observation Residuals
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 5 (all multi-starts)
+Avg. Total Evals  : 1 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 5
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 0
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+Observation    Measured       Simulated      Weight          Residual(Transformed and Weighted)   Sensitive?
+obs0          1.160000E-02  7.387994E-03  1.000000E+00  +4.212006E-03      YES
+obs1          3.726000E-01  3.725430E-01  1.000000E+00  +5.702549E-05      YES
+obs2          1.045100E+00  9.997313E-01  1.000000E+00  +4.536866E-02      YES
+obs3          1.143200E+00  1.000848E+00  1.000000E+00  +1.423516E-01      YES
+obs4          1.006400E+00  1.000788E+00  1.000000E+00  +5.612254E-03      YES
+obs5          8.577000E-01  1.000697E+00  1.000000E+00  -1.429974E-01      YES
+obs6          1.052500E+00  1.000641E+00  1.000000E+00  +5.185857E-02      YES
+obs7          9.827000E-01  1.000573E+00  1.000000E+00  -1.787294E-02      YES
+obs8          1.215000E+00  1.000512E+00  1.000000E+00  +2.144885E-01      YES
+obs9          1.062300E+00  1.000465E+00  1.000000E+00  +6.183514E-02      YES
+obs10         8.123000E-01  1.000420E+00  1.000000E+00  -1.881196E-01      YES
+obs11         1.210000E-02  1.627050E-02  1.000000E+00  -4.170502E-03      YES
+obs12         2.520000E-02  6.064798E-02  1.000000E+00  -3.544798E-02      YES
+obs13         2.272000E-01  2.877837E-01  1.000000E+00  -6.058367E-02      YES
+obs14         5.522000E-01  4.706607E-01  1.000000E+00  +8.153927E-02      YES
+obs15         7.101000E-01  6.694830E-01  1.000000E+00  +4.061697E-02      YES
+obs16         7.774000E-01  8.776026E-01  1.000000E+00  -1.002026E-01      YES
+obs17         9.270000E-01  9.491099E-01  1.000000E+00  -2.210987E-02      YES
+obs18         1.005000E+00  9.886615E-01  1.000000E+00  +1.633847E-02      YES
+obs19         1.030700E+00  9.994218E-01  1.000000E+00  +3.127822E-02      YES
+obs20         1.072100E+00  1.001478E+00  1.000000E+00  +7.062217E-02      YES
+obs21         9.329000E-01  1.001821E+00  1.000000E+00  -6.892140E-02      YES
+obs22         4.200000E-03  1.301718E-02  1.000000E+00  -8.817176E-03      YES
+obs23         2.220000E-02  2.729891E-02  1.000000E+00  -5.098912E-03      YES
+obs24         3.410000E-02  8.580337E-02  1.000000E+00  -5.170337E-02      YES
+obs25         1.143000E-01  1.383912E-01  1.000000E+00  -2.409123E-02      YES
+obs26         2.459000E-01  2.143765E-01  1.000000E+00  +3.152353E-02      YES
+obs27         3.583000E-01  3.550445E-01  1.000000E+00  +3.255541E-03      YES
+obs28         4.926000E-01  4.597632E-01  1.000000E+00  +3.283678E-02      YES
+obs29         6.072000E-01  5.970631E-01  1.000000E+00  +1.013693E-02      YES
+obs30         7.149000E-01  7.167751E-01  1.000000E+00  -1.875098E-03      YES
+obs31         7.868000E-01  7.990908E-01  1.000000E+00  -1.229081E-02      YES
+obs32         8.301000E-01  8.678426E-01  1.000000E+00  -3.774258E-02      YES
+obs33         5.300000E-03  1.371527E-02  1.000000E+00  -8.415271E-03      YES
+obs34         3.600000E-03  2.434672E-02  1.000000E+00  -2.074672E-02      YES
+obs35         1.940000E-02  6.381944E-02  1.000000E+00  -4.441944E-02      YES
+obs36         6.200000E-02  9.778341E-02  1.000000E+00  -3.578341E-02      YES
+obs37         1.489000E-01  1.468228E-01  1.000000E+00  +2.077234E-03      YES
+obs38         2.390000E-01  2.409724E-01  1.000000E+00  -1.972387E-03      YES
+obs39         3.534000E-01  3.160107E-01  1.000000E+00  +3.738927E-02      YES
+obs40         4.597000E-01  4.241239E-01  1.000000E+00  +3.557611E-02      YES
+obs41         5.616000E-01  5.319271E-01  1.000000E+00  +2.967291E-02      YES
+obs42         6.635000E-01  6.176999E-01  1.000000E+00  +4.580012E-02      YES
+obs43         5.858000E-01  7.014303E-01  1.000000E+00  -1.156303E-01      YES
+obs44         7.000000E-03  2.660773E-03  1.000000E+00  +4.339227E-03      YES
+obs45         1.000000E-02  4.312892E-03  1.000000E+00  +5.687108E-03      YES
+obs46         0.000000E+00  1.054633E-02  1.000000E+00  -1.054633E-02      YES
+obs47         0.000000E+00  1.620331E-02  1.000000E+00  -1.620331E-02      YES
+obs48         1.340000E-02  2.497307E-02  1.000000E+00  -1.157307E-02      YES
+obs49         1.420000E-02  4.410194E-02  1.000000E+00  -2.990194E-02      YES
+obs50         5.360000E-02  6.185812
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 4 (all multi-starts)
+Avg Alg Evals     : 1 (per multi-start)
+Total Evals       : 52 (all multi-starts)
+Avg. Total Evals  : 13 (per multi-start)
+Upper Violations  : 0 (all multi-starts)
+Lower Violations  : 0 (all multi-starts)
+Move Limit Viols  : 0 (all multi-starts)
+Avg Upper Viols   : 0 (per multi-start)
+Avg Lower Viols   : 0 (per multi-start)
+Avg Mv Lmt Viols  : 0 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 52
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+E-02  1.000000E+00  -8.258119E-03      YES
+obs51         6.680000E-02  9.228678E-02  1.000000E+00  -2.548678E-02      YES
+obs52         2.537000E-01  1.300823E-01  1.000000E+00  +1.236177E-01      YES
+obs53         1.442000E-01  1.675698E-01  1.000000E+00  -2.336985E-02      YES
+obs54         1.764000E-01  2.134229E-01  1.000000E+00  -3.702286E-02      YES
+obs61         0.000000E+00  5.323899E-03  1.000000E+00  -5.323899E-03      YES
+obs62         6.400000E-03  1.113116E-02  1.000000E+00  -4.731163E-03      YES
+obs63         1.500000E-02  2.101076E-02  1.000000E+00  -6.010764E-03      YES
+obs64         3.650000E-02  3.364283E-02  1.000000E+00  +2.857170E-03      YES
+obs65         5.620000E-02  5.285816E-02  1.000000E+00  +3.341837E-03      YES
+
+Correlation between raw measured and simulated observations (no transformation or weighting)
+Ry         :  0.989
+Ry-squared :  0.978
+
+Correlation between measured and simulated observations (with transformation and weighting)
+Rw         :  0.989
+Rw-squared :  0.978
+
+Algorithm Metrics
+Algorithm         : GML-MS
+Num Multi-Starts  : 4
+Max Iterations    : 30 (per multi-start)
+Actual Iterations : 10 (for last multi-start)
+Convergence Val   : 0.000100
+LPRCV             : 0.300000
+LRRCV             : 0.010000
+Max Lambda Trials : 10
+Move Limit        : 0.150000
+Total Alg Evals   : 158 (all multi-starts)
+Avg Alg Evals     : 39 (per multi-start)
+Total Evals       : 845 (all multi-starts)
+Avg. Total Evals  : 211 (per multi-start)
+Upper Violations  : 103 (all multi-starts)
+Lower Violations  : 103 (all multi-starts)
+Move Limit Viols  : 955 (all multi-starts)
+Avg Upper Viols   : 25 (per multi-start)
+Avg Lower Viols   : 25 (per multi-start)
+Avg Mv Lmt Viols  : 238 (per multi-start)
+LPRCV : Lambda-Phi Ratio Convergence Value
+LRRCV : Lambda Relative Reduction Convergence Value
+Total Evals             : 845
+Telescoping Strategy    : none
+
+Finite Difference Metrics
+Difference Type    : Forward
+Increment Type    : Range-Relative
+Finite Difference Increments
+<tot_sm>     : 0.001000
+<kads_1>     : 0.001000
+<kads_2>     : 0.001000
+<kads_3>     : 0.001000
+<kads_4>     : 0.001000
+<kads_5>     : 0.001000
+<kads_6>     : 0.001000
+<kdes_1>     : 0.001000
+<kdes_2>     : 0.001000
+<kdes_3>     : 0.001000
+<kdes_4>     : 0.001000
+<kdes_5>     : 0.001000
+<kdes_6>     : 0.001000
+Finite Difference Mimumum Increment : 1.000000E-10
+Jacobian Evals     : 47
+Optimal Step Evals : 0
+Statistics Evals   : 1
+Ostrich Error Report for Processor 7 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_7/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 6 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_6/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Shutting down MPI required 0.045644 seconds
+Ostrich Error Report for Processor 0 
+A total of 58 errors and/or warnings were reported
+JACOBIAN ERROR             : Jacobian has 5 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 23 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 22 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 4 insensitive parameters 
+JACOBIAN ERROR             : Jacobian has 16 insensitive observations 
+JACOBIAN ERROR             : Jacobian has 2 insensitive parameters 
+Ostrich Error Report for Processor 8 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_8/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 3 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_3/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 5 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_5/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 9 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_9/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 13 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_13/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 1 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_1/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 12 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_12/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 11 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_11/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 10 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_10/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 2 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_2/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 4 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_4/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 14 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_14/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+Ostrich Error Report for Processor 15 
+A total of 1 errors and/or warnings were reported
+FILE CLEANUP               : Ostrich deleted OstrichRun_15/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 
+FILE CLEANUP               : Ostrich deleted OstrichRun_0/ostrich_model.py 
+num CTORS: 92 
+num DTORS: 92 

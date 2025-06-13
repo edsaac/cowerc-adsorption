@@ -1,0 +1,141 @@
+#Configuration File for Ostrich Program
+#ProgramType	APPSO
+#ProgramType ParticleSwarm
+#ProgramType Levenberg-Marquardt
+ProgramType GML-MS
+ObjectiveFunction	WSSE
+ModelSubdir	OstrichRun_
+
+BeginFilePairs
+parameters.tpl	parameters.dat
+EndFilePairs
+
+ModelExecutable	./ostrich_model.py
+
+#Parameter Specification
+BeginParams
+#parameter	init.   low	    high	tx_in  tx_ost	tx_out
+<tot_sm>	4.98	0.00	10.	none	none	none
+<kads_1>	1.30	-4.0	3.0	none	none	none
+<kads_2>	1.48	-4.0	3.0	none	none	none
+<kads_3>	1.48	-4.0	3.0	none	none	none
+<kads_4>	1.48	-4.0	3.0	none	none	none
+<kads_5>	1.48	-4.0	3.0	none	none	none
+<kads_6>	1.51	-4.0	3.0	none	none	none
+<kdes_1>	-0.74	-5.0	2.0	none	none	none
+<kdes_2>	-1.52	-5.0	2.0	none	none	none
+<kdes_3>	-1.96	-5.0	2.0	none	none	none
+<kdes_4>	-2.00	-5.0	2.0	none	none	none
+<kdes_5>	-2.52	-5.0	2.0	none	none	none
+<kdes_6>	-2.60	-5.0	2.0	none	none	none
+EndParams
+
+#Observation Configuration
+BeginObservations
+#obs	value	weight	file		keyword		l	col
+#<name1><value1><wgt1><file1><sep1><key1><line1><col1><tok1><aug1><grp1>
+obs0	0.0116	1.00	results.dat	OST_NULL	0	1
+obs1	0.3726	1.00	results.dat	OST_NULL	1	1
+obs2	1.0451	1.00	results.dat	OST_NULL	2	1
+obs3	1.1432	1.00	results.dat	OST_NULL	3	1
+obs4	1.0064	1.00	results.dat	OST_NULL	4	1
+obs5	0.8577	1.00	results.dat	OST_NULL	5	1
+obs6	1.0525	1.00	results.dat	OST_NULL	6	1
+obs7	0.9827	1.00	results.dat	OST_NULL	7	1
+obs8	1.2150	1.00	results.dat	OST_NULL	8	1
+obs9	1.0623	1.00	results.dat	OST_NULL	9	1
+obs10	0.8123	1.00	results.dat	OST_NULL	10	1
+obs11	0.0121	1.00	results.dat	OST_NULL	11	1
+obs12	0.0252	1.00	results.dat	OST_NULL	12	1
+obs13	0.2272	1.00	results.dat	OST_NULL	13	1
+obs14	0.5522	1.00	results.dat	OST_NULL	14	1
+obs15	0.7101	1.00	results.dat	OST_NULL	15	1
+obs16	0.7774	1.00	results.dat	OST_NULL	16	1
+obs17	0.9270	1.00	results.dat	OST_NULL	17	1
+obs18	1.0050	1.00	results.dat	OST_NULL	18	1
+obs19	1.0307	1.00	results.dat	OST_NULL	19	1
+obs20	1.0721	1.00	results.dat	OST_NULL	20	1
+obs21	0.9329	1.00	results.dat	OST_NULL	21	1
+obs22	0.0042	1.00	results.dat	OST_NULL	22	1
+obs23	0.0222	1.00	results.dat	OST_NULL	23	1
+obs24	0.0341	1.00	results.dat	OST_NULL	24	1
+obs25	0.1143	1.00	results.dat	OST_NULL	25	1
+obs26	0.2459	1.00	results.dat	OST_NULL	26	1
+obs27	0.3583	1.00	results.dat	OST_NULL	27	1
+obs28	0.4926	1.00	results.dat	OST_NULL	28	1
+obs29	0.6072	1.00	results.dat	OST_NULL	29	1
+obs30	0.7149	1.00	results.dat	OST_NULL	30	1
+obs31	0.7868	1.00	results.dat	OST_NULL	31	1
+obs32	0.8301	1.00	results.dat	OST_NULL	32	1
+obs33	0.0053	1.00	results.dat	OST_NULL	33	1
+obs34	0.0036	1.00	results.dat	OST_NULL	34	1
+obs35	0.0194	1.00	results.dat	OST_NULL	35	1
+obs36	0.0620	1.00	results.dat	OST_NULL	36	1
+obs37	0.1489	1.00	results.dat	OST_NULL	37	1
+obs38	0.2390	1.00	results.dat	OST_NULL	38	1
+obs39	0.3534	1.00	results.dat	OST_NULL	39	1
+obs40	0.4597	1.00	results.dat	OST_NULL	40	1
+obs41	0.5616	1.00	results.dat	OST_NULL	41	1
+obs42	0.6635	1.00	results.dat	OST_NULL	42	1
+obs43	0.5858	1.00	results.dat	OST_NULL	43	1
+obs44	0.0070	1.00	results.dat	OST_NULL	44	1
+obs45	0.0100	1.00	results.dat	OST_NULL	45	1
+obs46	0.0000	1.00	results.dat	OST_NULL	46	1
+obs47	0.0000	1.00	results.dat	OST_NULL	47	1
+obs48	0.0134	1.00	results.dat	OST_NULL	48	1
+obs49	0.0142	1.00	results.dat	OST_NULL	49	1
+obs50	0.0536	1.00	results.dat	OST_NULL	50	1
+obs51	0.0668	1.00	results.dat	OST_NULL	51	1
+obs52	0.2537	1.00	results.dat	OST_NULL	52	1
+obs53	0.1442	1.00	results.dat	OST_NULL	53	1
+obs54	0.1764	1.00	results.dat	OST_NULL	54	1
+obs61	0.0000	1.00	results.dat	OST_NULL	61	1
+obs62	0.0064	1.00	results.dat	OST_NULL	62	1
+obs63	0.0150	1.00	results.dat	OST_NULL	63	1
+obs64	0.0365	1.00	results.dat	OST_NULL	64	1
+obs65	0.0562	1.00	results.dat	OST_NULL	65	1
+EndObservations
+
+# Configuration for Asynchronous Parallel Particle Swarm Optimization
+BeginAPPSO
+SwarmSize	32
+NumGenerations	50
+ConstrictionFactor	1
+CognitiveParam	2
+SocialParam	2
+InertiaWeight	1.2
+InertiaReductionRate	0.10
+EndAPPSO
+
+# Configuration for Particle Swarm Optimization
+BeginParticleSwarm
+SwarmSize	320
+NumGenerations	100
+ConstrictionFactor	1
+CognitiveParam	2
+SocialParam	2
+InertiaWeight	1.2
+InertiaReductionRate	0.10
+InitPopulationMethod	LHS
+ConvergenceVal	1.00e-4
+EndParticleSwarm
+
+# Configuration for Gauss-Marquardt-Levenberg
+BeginLevMar
+InitialLambda   10
+LambdaScaleFactor   1.10
+MoveLimit   0.15
+AlgorithmConvergenceValue   1.0e-4
+LambdaPhiRatio  0.30
+LambdaRelReduction  0.01
+MaxLambdas  10
+MaxIterations   30
+NumMultiStarts  4
+EndLevMar
+
+# BeginMathAndStats
+# DiffType	forward
+# DiffRelIncrement	0.001
+# AllStats
+# EndMathAndStats
+

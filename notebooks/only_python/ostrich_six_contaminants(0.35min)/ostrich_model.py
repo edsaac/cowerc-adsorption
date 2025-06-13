@@ -5,14 +5,25 @@ import numpy as np
 
 if __name__ == "__main__":
     ## Experiment constants
-    lenght = 0.85
+    lenght = 1.71
     pore_velocity = 9.645754126781533
     porosity = 0.5
-    times_to_query = [2.64, 8.09, 24.43, 68.33, 112.34, 204.95, 253.98, 299.91, 345.84, 437.7, 529.56, 601.92]
+    times_to_query = [
+        10.01,
+        50.62,
+        140.87,
+        238.22,
+        474.27,
+        705.06,
+        1001.60,
+        1259.46,
+        1363.68,
+        1563.89,
+        1948.33,
+        2203.16,
+    ]
 
-    c_0 = [166.5, 363.83, 168.33, 333.33, 178.5, 378.0]
-    molecular_weight = np.array([214.04, 361.8, 314.05, 296.1, 414.1, 400.11])
-    c_0 = c_0 / molecular_weight
+    c_0 = [2.522, 1.071, 1.727, 2.342, 0.878, 0.885]
 
     ## Read model parameters
     with open("./parameters.dat", "r") as f:
@@ -32,14 +43,17 @@ if __name__ == "__main__":
     )
 
     sim = Simulation(**p.nondim)
-    sim.end_time = 650
-    sim.cfl = 0.85
+    sim.end_time = 2250
+    sim.cfl = 0.90
     sim.solve()
 
     ## Query the btc from t
     t, btc = sim.btc
     results = [np.interp(times_to_query, t, c) for c in btc]
     results = np.array(results)
+
+    if any(np.isnan(results.flatten())):
+        raise ValueError("a NaN in the results")
 
     with open("./log.dat", "w") as f:
         f.write(repr(p))

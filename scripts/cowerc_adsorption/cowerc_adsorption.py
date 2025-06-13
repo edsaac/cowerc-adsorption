@@ -413,7 +413,7 @@ class Simulation:
         """
         t, btc = self.btc
         fig, ax = plt.subplots(figsize=(6, 3.5))
-        colors = cycle(["darkgrey", "purple", "blue", "green", "orange", "red"])
+        colors = cycle(_COLORS)
 
         max_btc = 1.0
         for i, (curve, color) in enumerate(zip(btc, colors), start=1):
@@ -500,7 +500,7 @@ class ExperimentalBreakthroughData:
     def print_observations_OSTRICH(self) -> None:
         """Print observations for Ostrich"""
         for i, c in enumerate(self.conc.flatten(), 0):
-            print(f"obs{i}\t{c:.4f}\t1\tresults.dat\tOST_NULL\t{i}\t1")
+            print(f"obs{i}\t{c:.4f}\t1.00\tresults.dat\tOST_NULL\t{i}\t1")
 
 
 def plot_btc_and_data(simulation: Simulation, experimental_data: ExperimentalBreakthroughData):
