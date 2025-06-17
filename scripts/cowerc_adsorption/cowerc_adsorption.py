@@ -1,16 +1,19 @@
 import functools
 from time import perf_counter
 from itertools import cycle
-from typing import Iterable
+from typing import Iterable, Optional
 from dataclasses import dataclass
 
 import numpy as np
 from numpy.typing import NDArray, ArrayLike
 from numba import jit
 import pandas as pd
+from scipy.special import erf
 
 import matplotlib.pyplot as plt
 from matplotlib import patheffects
+
+__all__ = ["PhysicalParams", "Simulation", "ExperimentalBreakthroughData"]
 
 
 def _timer(func):
@@ -71,6 +74,36 @@ class PhysicalParams:
 
         if self.k_ads.shape != self.C_0.shape:
             raise ValueError("k_ads and C_0 must have the same shape")
+
+    def thomas_model(self, time: NDArray, alternative_sm: Optional[NDArray] = None) -> NDArray:
+        """Calculate the relative concentration of each contaminant"""
+
+        sm = self.sm
+        if alternative_sm is not None:
+            sm = np.array(alternative_sm)
+
+            if sm.shape != self.k_ads.shape:
+                raise ValueError(f"alternative_sm must have shape {self.k_ads.shape}")
+
+        r = 1 + (self.n * self.k_ads * self.C_0) / (sm * self.k_des)
+        n = self.k_ads * self.L / self.v
+        T = np.outer((self.k_des / self.k_ads + self.n * self.C_0 / sm), (self.v * time / self.L - 1))
+
+        def _J_function(x: float, y: float | NDArray) -> float | NDArray:
+            """Approximation of the J function"""
+            t1 = erf(np.sqrt(x) - np.sqrt(y))
+            t21 = np.exp(-np.power(np.sqrt(x) - np.sqrt(y), 2))
+            t22 = np.sqrt(np.pi) * (np.sqrt(y) + np.power(x * y, 0.25))
+
+            return 0.5 * (1 - t1 + t21 / t22)
+
+        J1 = np.array([_J_function(ni / ri, ni * Ti) for ni, ri, Ti in zip(n, r, T)])
+        J2 = np.array([_J_function(ni, ni * Ti / ri) for ni, ri, Ti in zip(n, r, T)])
+
+        exp = np.exp((1 - 1 / r)[:, None] * (n[:, None] - n[:, None] * T))
+        jop = J1 / (J1 + (1 - J2) * exp)
+
+        return jop
 
     @property
     def N(self) -> int:
@@ -145,6 +178,7 @@ class PhysicalParams:
     def _repr_html_(self):
         kads = "<br>".join(map(lambda x: f"{x:.3E}", self.k_ads))
         kdes = "<br>".join(map(lambda x: f"{x:.3E}", self.k_des))
+        c0 = "<br>".join(map(lambda x: f"{x:.3E}", self.C_0))
 
         html_table = (
             """
@@ -256,6 +290,16 @@ class PhysicalParams:
                     </div>
                     <div class="sub-table-column">
                         <code>{kdes}</code>
+                    </div> 
+                </div>
+            </div>
+            <div class="table-column">
+                <div class="sub-table-container">
+                    <div class="sub-table-column">
+                        <abbr title="Inflow concentrations"><em>C<sub>0</sub></em> = </abbr>
+                    </div>
+                    <div class="sub-table-column">
+                        <code>{c0}</code>
                     </div> 
                 </div>
             </div>
