@@ -5,6 +5,7 @@ ProgramType Levenberg-Marquardt
 #ProgramType GML-MS
 ObjectiveFunction	WSSE
 ModelSubdir	OstrichRun_
+OstrichWarmStart    yes
 
 BeginFilePairs
 parameters.tpl	parameters.dat
@@ -172,7 +173,7 @@ LambdaPhiRatio  0.30
 LambdaRelReduction  0.01
 MaxLambdas  10
 MaxIterations   30
-NumMultiStarts  4
+# NumMultiStarts  4
 EndLevMar
 
 # BeginMathAndStats
