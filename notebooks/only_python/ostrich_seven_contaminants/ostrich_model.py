@@ -71,7 +71,7 @@ if __name__ == "__main__":
     sim.write_every = 100
     sim.cfl = 0.92
     sim.end_time = 6000
-    sim.solve()
+    sim.solve_v1()
 
     ## Query the btc from t
     t, btc = sim.btc

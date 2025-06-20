@@ -32,7 +32,7 @@ if __name__ == "__main__":
     sim = Simulation(**p.nondim)
     sim.end_time = 980
     sim.cfl = 0.90
-    sim.solve()
+    sim.solve_v1()
 
     ## Query the btc from t
     t, btc = sim.btc

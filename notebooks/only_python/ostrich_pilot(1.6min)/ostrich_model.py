@@ -49,9 +49,9 @@ if __name__ == "__main__":
     )
 
     sim = Simulation(**p.nondim)
-    sim.end_time = 7000
-    sim.cfl = 0.80
-    sim.solve()
+    sim.end_time = 68_000
+    sim.cfl = 0.85
+    sim.solve_v1()
 
     ## Query the btc from t
     t, btc = sim.btc
@@ -61,10 +61,10 @@ if __name__ == "__main__":
     if any(np.isnan(results.flatten())):
         raise ValueError("a NaN in the results")
 
-    with open("./log.dat", "w") as f:
+    with open("log.dat", "w") as f:
         f.write(repr(p))
         f.write("\n")
         f.write(repr(sim))
 
-    with open("./results.dat", "w") as f:
-        f.write("\n".join(map(str, results.flatten())))
+    with open("results.dat", "w") as f:
+        f.write("\n".join(map(lambda x: f"{x:.5E}", results.flatten())))
